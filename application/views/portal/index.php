@@ -128,11 +128,51 @@
                 <!-- Popular Post -->
                 <div class="col-lg-4 pt-5">
                     <span>Popular Post</span>
-                    <div class="block-title-4">
-                        <div class="sd-popular-post">
-                            <div class="row">
-                                <div class="col-lg-3 p-2">
-                                    <img src="<?= base_url('assets/img/berita/') ?>3.jpg" alt="Popular Post">
+                    <div class="block-title-4"></div>
+                    <div class="sd-popular-post">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="popular-image">
+                                    <img src="<?= base_url('assets/portaltn/img/icon/') ?>1.jpg" alt="Popular Post">
+                                </div>
+
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="sd-popular-text">
+                                    Hujan Angin, Pohon Tumbang Halangi Jalan Masuk
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="<?= base_url('assets/portaltn/img/icon/') ?>1.jpg" alt="Popular Post">
+
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="sd-popular-text">
+                                    Hujan Angin, Pohon Tumbang Halangi Jalan Masuk
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="<?= base_url('assets/portaltn/img/icon/') ?>1.jpg" alt="Popular Post">
+
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="sd-popular-text">
+                                    Hujan Angin, Pohon Tumbang Halangi Jalan Masuk
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="<?= base_url('assets/portaltn/img/icon/') ?>1.jpg" alt="Popular Post">
+
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="sd-popular-text">
+                                    Hujan Angin, Pohon Tumbang Halangi Jalan Masuk
                                 </div>
                             </div>
                         </div>
