@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Dashboard extends CI_Controller
+{
 
 	/**
 	 * Index Page for this controller.
@@ -20,32 +21,31 @@ class Dashboard extends CI_Controller {
 	 */
 	public function index()
 	{
-		$cek = $this->uri->segment(3);
-		$data['menu'] = $this->db->get('tb_kategori')->result();
-		if($this->input->post('load_cat_posts')){
-			// echo "<script>console.log('hayooo')</script>";
-		}
-		if($cek == ''){
-			$data['tittle'] = "Portal Berita";
-			$data['berita'] = $this->db->get('tb_berita')->result();
-			$this->load->view('frontend/template/header', $data);
-			$this->load->view('frontend/template/top', $data);
-			$this->load->view('frontend/index');
-		}else{
-			$data['tittle'] = "Portal Berita - ".$cek;
-			$data['kategoriberita'] = $this->db->query("SELECT * FROM `tb_kategori` WHERE '".$cek."'");
-			$this->load->view('frontend/template/header', $data);
-			$this->load->view('frontend/template/top', $data);
-			$this->load->view('frontend/menu_index');
-		}
-		
+		// $cek = $this->uri->segment(3);
+		// $data['menu'] = $this->db->get('tb_kategori')->result();
+		// if($this->input->post('load_cat_posts')){
+		// 	// echo "<script>console.log('hayooo')</script>";
+		// }
+		// if($cek == ''){
+		// 	$data['tittle'] = "Portal Berita";
+		// 	$data['berita'] = $this->db->get('tb_berita')->result();
+		// 	$this->load->view('frontend/template/header', $data);
+		// 	$this->load->view('frontend/template/top', $data);
+		// 	$this->load->view('frontend/index');
+		// }else{
+		// 	$data['tittle'] = "Portal Berita - ".$cek;
+		// 	$data['kategoriberita'] = $this->db->query("SELECT * FROM `tb_kategori` WHERE '".$cek."'");
+		// 	$this->load->view('frontend/template/header', $data);
+		// 	$this->load->view('frontend/template/top', $data);
+		// 	$this->load->view('frontend/menu_index');
+		// }
+		$this->load->view('portal/index');
 	}
 
-	public function get(){
+	public function get()
+	{
 		$data = $this->db->get('tb_kategori')->result();
 		// print_r($data);
-        echo json_encode($data);
-    }
-
-
+		echo json_encode($data);
+	}
 }
