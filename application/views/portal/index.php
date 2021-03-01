@@ -80,7 +80,7 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="<?= base_url('assets/img/berita/') ?>1.jpg" alt="Los Angeles" width="800px" height="500px">
-                                <div class="carousel-caption">
+                                <div class="carousel-caption ">
                                     <h3>Los Angeles</h3>
                                     <p>We had such a great time in LA!</p>
                                 </div>
@@ -115,10 +115,23 @@
                     <span>Popular Post</span>
                     <div class="block-title-4"></div>
                     <div class="sd-popular-post">
-                        <div class="row">
+                        <div class="row pb-3">
                             <div class="col-3">
                                 <div class="popular-image">
-                                    <img src="<?= base_url('assets/portaltn/img/icon/') ?>1.jpg" alt="Popular Post">
+                                    <img style="width: 80px ; height: 80px " src="<?= base_url('assets/portaltn/img/icon/') ?>1.png" alt="Popular Post">
+                                </div>
+
+                            </div>
+                            <div class="col-9">
+                                <div class="sd-popular-text font-title">
+                                    Hujan Angin, Pohon Tumbang Halangi Jalan Masuk
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col-3">
+                                <div class="popular-image">
+                                    <img style="width: 80px ; height: 80px " src="<?= base_url('assets/portaltn/img/icon/') ?>2.png" alt="Popular Post">
                                 </div>
 
                             </div>
@@ -128,10 +141,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row pb-3">
                             <div class="col-3">
                                 <div class="popular-image">
-                                    <img src="<?= base_url('assets/portaltn/img/icon/') ?>1.jpg" alt="Popular Post">
+                                    <img style="width: 80px ; height: 80px " src="<?= base_url('assets/portaltn/img/icon/') ?>3.png" alt="Popular Post">
+
                                 </div>
 
                             </div>
@@ -141,23 +155,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row pb-3">
                             <div class="col-3">
                                 <div class="popular-image">
-                                    <img src="<?= base_url('assets/portaltn/img/icon/') ?>1.jpg" alt="Popular Post">
-                                </div>
+                                    <img style="width: 80px ; height: 80px " src="<?= base_url('assets/portaltn/img/icon/') ?>4.png" alt="Popular Post">
 
-                            </div>
-                            <div class="col-9">
-                                <div class="sd-popular-text">
-                                    Hujan Angin, Pohon Tumbang Halangi Jalan Masuk
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3">
-                                <div class="popular-image">
-                                    <img src="<?= base_url('assets/portaltn/img/icon/') ?>1.jpg" alt="Popular Post">
                                 </div>
 
                             </div>
@@ -243,12 +245,12 @@
                                     </a>
                                 </div>
                                 <div class="card-body">
-                                    <h2 class="card-title h3-sm h1-md h3-lg">
+                                    <h2 class="card-title h3-sm h1-md h3-lg font-title">
                                         <a href="http://google.com">
                                             Hujan Angin, Pohon Tumbang Halangi Jalan Masuk
                                         </a>
                                     </h2>
-                                    <div class="card-text mb-2 text-muted small">
+                                    <div class="card-text mb-2 text-muted small ">
                                         <span class="font-weight-bold d-none d-sm-inline mr-1">
                                             <a href="http://google.com">Arip</a>
                                         </span>
@@ -259,7 +261,7 @@
                                             </span>
                                         </span>
                                     </div>
-                                    <p class="card-text">This study examines the classroom talk about models and modelling of two secondary science teachers implementing a model-based inquiry instructional unit. The goal...</p>
+                                    <p class="card-text font-body">This study examines the classroom talk about models and modelling of two secondary science teachers implementing a model-based inquiry instructional unit. The goal...</p>
                                 </div>
 
                             </article>
