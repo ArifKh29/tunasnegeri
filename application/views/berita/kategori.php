@@ -27,9 +27,9 @@
                             <th scope="row"><?= $i; ?></th>
                             <td><?= $m->nama_kategori; ?></td>
                             <td>
-                                <a href="<?= base_url('berita/subkategori/').$m->id_kategori?>" class="badge badge-primary">detail</a>
+                                <a href="<?= base_url('berita/subkategori/') . $m->id_kategori ?>" class="badge badge-primary">detail</a>
                                 <a href="" data-toggle="modal" data-target="#editKategori<?= $m->id_kategori ?>" class="badge badge-success">edit</a>
-                                <a href="" class="badge badge-danger">delete</a>
+                                <a href="<?= base_url('berita/hapusKategori/') . $m->id_kategori ?>" class="badge badge-danger">delete</a>
                             </td>
                         </tr>
                         <?php $i++; ?>
@@ -63,7 +63,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <input type="text" class="form-control" id="kategori" required name="kategori" placeholder="Nama Kategori">
-                        
+
                     </div>
                     <div class="form-group">
                         <span>Show As Menu</span>

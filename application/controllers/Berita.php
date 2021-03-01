@@ -1,29 +1,30 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Berita extends CI_Controller {
+class Berita extends CI_Controller
+{
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function index()
-	{
-		$data['title'] = 'Berita';
+    /**
+     * Index Page for this controller.
+     *
+     * Maps to the following URL
+     * 		http://example.com/index.php/welcome
+     *	- or -
+     * 		http://example.com/index.php/welcome/index
+     *	- or -
+     * Since this controller is set as the default controller in
+     * config/routes.php, it's displayed at http://example.com/
+     *
+     * So any other public methods not prefixed with an underscore will
+     * map to /index.php/welcome/<method_name>
+     * @see https://codeigniter.com/user_guide/general/urls.html
+     */
+    public function index()
+    {
+        $data['title'] = 'Berita';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['berita'] = $this->db->query("SELECT *, tb_kategori.nama_kategori as kategori, tb_subkategori.nama_subkategori as subkategori FROM `tb_berita` JOIN tb_kategori JOIN tb_subkategori ON tb_berita.id_kategori=tb_kategori.id_kategori AND tb_kategori.id_kategori=tb_subkategori.id_kategori")->result();
-        
+
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -31,8 +32,9 @@ class Berita extends CI_Controller {
         $this->load->view('berita/index', $data);
         $this->load->view('templates/footer');
     }
-    
-    public function add(){
+
+    public function add()
+    {
         $data['title'] = 'Berita';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['berita'] = $this->db->query("SELECT *, tb_kategori.nama_kategori as kategori, tb_subkategori.nama_subkategori as subkategori FROM `tb_berita` JOIN tb_kategori JOIN tb_subkategori ON tb_berita.id_kategori=tb_kategori.id_kategori AND tb_kategori.id_kategori=tb_subkategori.id_kategori")->result();
@@ -47,7 +49,8 @@ class Berita extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
-    public function kategori(){
+    public function kategori()
+    {
         $data['title'] = 'Kategori Berita';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['kategori'] = $this->db->get('tb_kategori')->result();
@@ -59,7 +62,8 @@ class Berita extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
-    public function subkategori(){
+    public function subkategori()
+    {
         $idkategori = $this->uri->segment(3);
         $data['title'] = 'Sub Kategori Berita';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -72,7 +76,8 @@ class Berita extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
-    public function editSubKategori(){
+    public function editSubKategori()
+    {
         $subkategori = $this->input->post('subkategori');
         $id = $this->input->post('id');
 
@@ -82,7 +87,8 @@ class Berita extends CI_Controller {
         redirect('berita/kategori');
     }
 
-    public function addSubKategori(){
+    public function addSubKategori()
+    {
         $subkategori = $this->input->post('subkategori');
 
         $this->db->query("INSERT INTO `tb_subkategori`( `nama_subkategori`) VALUES ('$subkategori')");
@@ -91,7 +97,8 @@ class Berita extends CI_Controller {
         redirect('berita/kategori');
     }
 
-    public function editKategori(){
+    public function editKategori()
+    {
         $kategori = $this->input->post('kategori');
         $status = $this->input->post('status');
         $id = $this->input->post('id');
@@ -102,7 +109,17 @@ class Berita extends CI_Controller {
         redirect('berita/kategori');
     }
 
-    public function addKategori(){
+    public function hapusKategori()
+    {
+        $idkategori = $this->uri->segment(3);
+        $this->db->query("DELETE from `tb_kategori`  WHERE `id_kategori`='$idkategori'");
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                    Data Berhasil Dihapus</div>');
+        redirect('berita/kategori');
+    }
+
+    public function addKategori()
+    {
         $kategori = $this->input->post('kategori');
         $status = $this->input->post('status');
 
@@ -112,7 +129,8 @@ class Berita extends CI_Controller {
         redirect('berita/kategori');
     }
 
-    public function simpan(){
+    public function simpan()
+    {
         // $this->form_validation->set_rules('name', 'Full Name', 'required|trim');
         $tanggal = $this->input->post('tanggal');
         $judul = $this->input->post('judul');
@@ -124,23 +142,21 @@ class Berita extends CI_Controller {
 
         $upload_image = $_FILES['image']['name'];
 
-            if ($upload_image) {
-                $config['allowed_types'] = 'gif|jpg|png';
-                $config['max_size']     = '2048';
-                $config['upload_path'] = './assets/img/berita/';
+        if ($upload_image) {
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_size']     = '2048';
+            $config['upload_path'] = './assets/img/berita/';
 
-                $this->load->library('upload', $config);
+            $this->load->library('upload', $config);
 
-                if ($this->upload->do_upload('image')) {
-                    $new_image = $this->upload->data('file_name');
-                    // $this->db->set('foro', $new_image);
-                } else {
-                    echo $this->upload->display_errors();
-                }
+            if ($this->upload->do_upload('image')) {
+                $new_image = $this->upload->data('file_name');
+                // $this->db->set('foro', $new_image);
+            } else {
+                echo $this->upload->display_errors();
             }
+        }
 
         $this->db->query("INSERT INTO `tb_berita`( `tanggal`, `judul_berita`, `cuplik`, `isi`, `foto`, `id_kategori`, `tags`, `id_subkategori`) VALUES ('$tanggal','$judul','$cuplikan','$isi','$upload_image','$kategori','$tag','$subkategori')");
     }
-
-    
 }

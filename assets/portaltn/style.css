@@ -1,5 +1,22 @@
 .nav-logo {
-	width: 250px;
+	width: 249px;
+}
+
+a {
+	color: #000000;
+	text-decoration: none;
+	background-color: transparent;
+}
+.bg-primary,
+.progress-bar,
+.badge-primary {
+	background-color: #128673 !important;
+}
+
+.dropdown-menu.mega .container,
+.dropdown-menu,
+.border-primary {
+	border-color: #128673 !important;
 }
 
 .search__input {
@@ -60,6 +77,223 @@
 	border-bottom-width: 2px;
 }
 
+.block-title-6 {
+	position: relative;
+	margin-bottom: 1.5rem;
+}
+
+.block-title-6 h4 span {
+	padding: 0.25rem 1rem;
+	padding-top: 0.25rem;
+	padding-right: 1rem;
+	padding-bottom: 0.25rem;
+	padding-left: 1rem;
+}
+
+.block-title-6 h1,
+.block-title-6 h2,
+.block-title-6 h3,
+.block-title-6 h4,
+.block-title-6 h5,
+.block-title-6 h6 {
+	border-bottom: 2px solid #dee2e6;
+	border-bottom-color: rgb(222, 226, 230);
+	padding-top: 0.25rem;
+	padding-right: 1rem;
+	padding-bottom: 0.25rem;
+}
+
+.nav-block-link,
+.nav-block-link1,
+.nav-block-link2,
+.nav-block-link3,
+.nav-block-link4,
+.nav-block-link5,
+.nav-block-link6,
+.nav-block-link7,
+.nav-block-more {
+	position: absolute;
+	top: 0;
+	right: 0.5rem;
+	margin: auto 0;
+	z-index: 2;
+	line-height: 30px;
+	text-align: right;
+	border: 0;
+}
+
 .popular-image {
 	width: inherit;
+}
+
+.h1 > a,
+.h2 > a,
+.h3 > a,
+.h4 > a,
+.h5 > a,
+.h6 > a,
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a {
+	color: #1b1b1b;
+	-webkit-font-smoothing: antialiased;
+}
+* {
+	box-sizing: border-box;
+	outline: none;
+	box-sizing: border-box;
+}
+
+.font-family h1,
+.font-family h2,
+.font-family h3,
+.font-family h4,
+.font-family h5,
+.font-family h6,
+.font-family .h1,
+.font-family .h2,
+.font-family .h3,
+.font-family .h4,
+.font-family .h5,
+.font-family .h6,
+.font-family .navbar-nav,
+.menu-mobile a,
+.u-breadcrumb .breadcrumb-item,
+.post-content .tags-list li:first-child {
+	font-family: "Roboto", sans-serif;
+}
+
+.h3-lg {
+	font-size: 1.25rem;
+}
+
+.image-wrapper {
+	background-color: #ffffff;
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+	background-position-x: 0%;
+	background-position-y: 0%;
+	background-size: 400% 700% !important;
+	background-position: 50% !important;
+	animation: f 1.5s infinite linear forwards;
+}
+
+.col-lg-6 {
+	-ms-flex: 0 0 auto;
+	flex: 0 0 auto;
+	width: 50%;
+}
+
+.card-full .card-body {
+	padding: 0;
+	padding-top: 0px;
+	padding-top: 1rem;
+}
+
+.img-fluid,
+.img-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
+
+.ratio_160-112,
+.ratio_115-80,
+.ratio_110-77 {
+	padding-bottom: 20%;
+}
+
+.category-content > * {
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	width: 100%;
+	max-width: 100%;
+	padding-right: calc(var(--bs-gutter-x) / 2);
+	padding-left: calc(var(--bs-gutter-x) / 2);
+	margin-top: var(--bs-gutter-y);
+}
+
+.side-img {
+	width: 100%;
+	object-fit: contain;
+}
+
+.side-ads {
+	padding-bottom: 20px;
+}
+
+.fatop {
+	padding: 8px;
+	font-size: 15px;
+	width: 30px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+	border-radius: 50%;
+}
+
+.top-facebook {
+	background: #3b5998;
+	color: white;
+}
+
+.top-twitter {
+	background: #55acee;
+	color: white;
+}
+
+.top-google {
+	background: #dd4b39;
+	color: white;
+}
+
+.top-youtube {
+	background: #bb0000;
+	color: white;
+}
+
+.top-instagram {
+	background: #125688;
+	color: white;
+}
+
+.fasm {
+	padding: 20px;
+	font-size: 30px;
+	width: 22%;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+}
+
+.fa:hover {
+	opacity: 0.7;
+}
+
+.sosmed-facebook {
+	background: #3b5998;
+	color: white;
+}
+
+.sosmed-twitter {
+	background: #55acee;
+	color: white;
+}
+
+.sosmed-google {
+	background: #dd4b39;
+	color: white;
+}
+
+.sosmed-youtube {
+	background: #bb0000;
+	color: white;
+}
+
+.sosmed-instagram {
+	background: #125688;
+	color: white;
 }
