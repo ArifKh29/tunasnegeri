@@ -3,10 +3,19 @@
 	padding-right: 50px;
 }
 
+.font-title {
+	font-family: "Monaco", Monaco, Sans-serif;
+	font-weight: bold;
+}
+.font-body {
+	font-family: "Georgia", Georgia, Serif;
+}
 .nav-logo {
 	width: 249px;
 }
-
+a:hover {
+	color: #128673;
+}
 a {
 	color: #000000;
 	text-decoration: none;
@@ -174,7 +183,7 @@ h6 > a {
 .menu-mobile a,
 .u-breadcrumb .breadcrumb-item,
 .post-content .tags-list li:first-child {
-	font-family: "Roboto", sans-serif;
+	font-family: "times new roman", serif;
 }
 
 .h3-lg {
