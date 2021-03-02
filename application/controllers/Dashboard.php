@@ -42,6 +42,11 @@ class Dashboard extends CI_Controller
 		$this->load->view('portal/index');
 	}
 
+	public function detail()
+	{
+		$this->load->view('portal/detail');
+	}
+
 	public function get()
 	{
 		$data = $this->db->get('tb_kategori')->result();
