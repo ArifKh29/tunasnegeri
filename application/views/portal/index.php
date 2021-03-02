@@ -695,33 +695,106 @@
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-lg-4 footer-about wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="col-md-3 col-lg-3 footer-about wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                         <img class="logo-footer" src="assets/img/logo.png" alt="logo-footer" data-at2x="assets/img/logo.png">
                         <p>
-                            We are a young company always looking for new and creative ideas to help you with our products in your everyday work.
+                           Untuk Indonesia Maju
                         </p>
-                        <p><a href="#">Our Team</a></p>
-                    </div>
-                    <div class="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
-                        <h3>Contact</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Via Rossini 10, 10136 Turin Italy</p>
-                        <p><i class="fas fa-phone"></i> Phone: (0039) 333 12 68 347</p>
-                        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:hello@domain.com">hello@domain.com</a></p>
-                        <p><i class="fab fa-skype"></i> Skype: you_online</p>
-                    </div>
-                    <div class="col-md-4 col-lg-3 footer-social wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                        <h3>Follow us</h3>
                         <p>
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        Alamat : <br>
+                        Jl. .........
                         </p>
+                    </div>
+                    <div class="col-md-3 col-lg-3 offset-lg-1 footer-contact wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                        <h3>Kategori</h3>
+                        <div class="row">
+                            <div class="col-6">
+                            <ul class="list-unstyled">
+                        <li><a href="#">PERISTIWA</a></li>
+                        <li><a href="#">PEMERINTAHAN</a></li>
+                        <li><a href="#">HUKUM</a></li>
+                        <li><a href="#">PENDIDIKAN</a></li>
+                        <li><a href="#">EKONOMI</a></li>
+                        </ul>
+                        </div>
+                    
+                            <div class="col-6">
+                            <ul class="list-unstyled">
+                        <li><a href="#">SOSIAL</a></li>
+                        <li><a href="#">BUDAYA</a></li>
+                        <li><a href="#">KESEHATAN</a></li>
+                        <li><a href="#">OLAHRAGA</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-md-3 col-lg-3 footer-about wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                        
+                            <div class="row">
+                            <h3>Connect with us</h3>
+                                <p><a href="#" class="fa fa-facebook fatop top-facebook"></a>
+                                <a href="#" class="fa fa-google fatop top-google"></a>
+                                <a href="#" class="fa fa-youtube fatop top-youtube"></a>
+                                <a href="#" class="fa fa-instagram fatop top-youtube  "></a>
+                            </div>
                     </div>
                 </div>
             </div>
+            </div>
+            
+   
+   
+   
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h5><i class="fa fa-road"></i> KATEGORI</h5>
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="list-unstyled">
+                            <li><a href="">Product</a></li>
+                            <li><a href="">Benefits</a></li>
+                            <li><a href="">Partners</a></li>
+                            <li><a href="">Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="list-unstyled">
+                            <li><a href="">Documentation</a></li>
+                            <li><a href="">Support</a></li>
+                            <li><a href="">Legal Terms</a></li>
+                            <li><a href="">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item"><a href="" class="nav-link pl-0"><i class="fa fa-facebook fa-lg"></i></a></li>
+                    <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-twitter fa-lg"></i></a></li>
+                    <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-github fa-lg"></i></a></li>
+                    <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-instagram fa-lg"></i></a></li>
+                </ul>
+                <br>
+            </div>
+            <div class="col-md-2">
+                <h5 class="text-md-right">Contact Us</h5>
+                <hr>
+            </div>
+            <div class="col-md-5">
+                <form>
+                    <fieldset class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <textarea class="form-control" id="exampleMessage" placeholder="Message"></textarea>
+                    </fieldset>
+                    <fieldset class="form-group text-xs-right">
+                        <button type="button" class="btn btn-secondary-outline btn-lg">Send</button>
+                    </fieldset>
+                </form>
+            </div>
         </div>
+    </div>
+        </div> -->
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
@@ -736,19 +809,16 @@
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link scroll-link" href="#top-content">Top</a>
+                                        <a class="nav-link scroll-link" href="#top-content">IKLAN</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link scroll-link" href="#section-1">Section 1</a>
+                                        <a class="nav-link scroll-link" href="#section-1">PEDOMAN MEDIA CYBER</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link scroll-link" href="#section-2">Section 2</a>
+                                        <a class="nav-link scroll-link" href="#section-2">REDAKSI</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link scroll-link" href="#section-3">Section 3</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link scroll-link" href="#section-4">Section 4</a>
+                                        <a class="nav-link scroll-link" href="#section-3">TENTANG</a>
                                     </li>
                                 </ul>
                             </div>
