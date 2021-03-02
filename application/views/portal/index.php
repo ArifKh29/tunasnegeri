@@ -42,7 +42,7 @@
     <div class="sticky-top">
         <div class="hr-nav ">
             <!-- Class hr-nav-2-->
-            <div class="bg-menu">
+            <div class="bg-menu" style="background-color: #128673;">
                 <div class="container">
                     <nav class="nav-container style" id="draggable">
                         <a href="#!" class="nav-item">Latest</a>
@@ -112,8 +112,14 @@
 
                 <!-- Popular Post -->
                 <div class="col-lg-4 pt-5">
-                    <span>Popular Post</span>
-                    <div class="block-title-4"></div>
+                    <div class="block-title-6">
+                        <h4 class="h5 border-primary">
+                            <span class="bg-primary text-white">
+                                Popular Post
+                            </span>
+                        </h4>
+
+                    </div>
                     <div class="sd-popular-post">
                         <div class="row pb-3">
                             <div class="col-3">
