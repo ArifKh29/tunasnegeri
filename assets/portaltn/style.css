@@ -3,12 +3,19 @@
 	padding-right: 50px;
 }
 
+.font-navbar{
+	font-family: "Fira Sans", Sans-serif;
+	
+}
+
 .font-title {
-	font-family: "Monaco", Monaco, Sans-serif;
+	font-family: "Fira Sans", Sans-serif;
 	font-weight: bold;
 }
 .font-body {
-	font-family: "Helvetica", Helvetica, Sans-serif;
+	font-family: "Harmattan", Sans-serif;
+
+	font-size: 20px
 }
 .nav-logo {
 	width: 249px;

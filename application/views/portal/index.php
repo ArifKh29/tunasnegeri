@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/portaltn/css/owl.carousel.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/portaltn/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Harmattan">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira Sans">
+
+
+
     <title>Tunas Negeri</title>
 </head>
 
@@ -44,7 +50,7 @@
             <!-- Class hr-nav-2-->
             <div class="bg-menu" style="background-color: #128673;">
                 <div class="container">
-                    <nav class="nav-container style" id="draggable">
+                    <nav class="nav-container style font-navbar" id="draggable">
                         <?php
                         foreach ($menu as $m) { ?>
                             <a href="<?= base_url() ?>" class="nav-item"><?= $m->nama_kategori ?></a>
@@ -65,7 +71,7 @@
                 <!-- Left Slider -->
                 <div class="col-lg-8 pt-5">
                     <div id="demo" class="carousel slide" data-ride="carousel">
-                        <ul class="carousel-indicators">
+                        <ul class="carousel-indicators ">
                             <li data-target="#demo" data-slide-to="0" class="active"></li>
                             <li data-target="#demo" data-slide-to="1"></li>
                             <li data-target="#demo" data-slide-to="2"></li>
@@ -73,22 +79,22 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="<?= base_url('assets/img/berita/') ?>1.jpg" alt="Los Angeles" width="800px" height="500px">
-                                <div class="carousel-caption ">
-                                    <h3>Los Angeles</h3>
+                                <div class="carousel-caption  ">
+                                    <h3 class="font-title">Los Angeles</h3>
                                     <p>We had such a great time in LA!</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <img src="<?= base_url('assets/img/berita/') ?>2.jpg" alt="Chicago" width="800" height="500">
                                 <div class="carousel-caption">
-                                    <h3>Chicago</h3>
+                                    <h3 class="font-title">Chicago</h3>
                                     <p>Thank you, Chicago!</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <img src="<?= base_url('assets/img/berita/') ?>3.jpg" alt="New York" width="800" height="500">
                                 <div class="carousel-caption">
-                                    <h3>New York</h3>
+                                    <h3 class="font-title">New York</h3>
                                     <p>We love the Big Apple!</p>
                                 </div>
                             </div>
@@ -135,7 +141,7 @@
 
                             </div>
                             <div class="col-9">
-                                <div class="sd-popular-text">
+                                <div class="sd-popular-text font-title">
                                     Hujan Angin, Pohon Tumbang Halangi Jalan Masuk
                                 </div>
                             </div>
@@ -149,7 +155,7 @@
 
                             </div>
                             <div class="col-9">
-                                <div class="sd-popular-text">
+                                <div class="sd-popular-text font-title">
                                     Hujan Angin, Pohon Tumbang Halangi Jalan Masuk
                                 </div>
                             </div>
@@ -163,7 +169,7 @@
 
                             </div>
                             <div class="col-9">
-                                <div class="sd-popular-text">
+                                <div class="sd-popular-text font-title">
                                     Hujan Angin, Pohon Tumbang Halangi Jalan Masuk
                                 </div>
                             </div>
@@ -178,18 +184,18 @@
                     <div class="block-area pt-4 pb-4 px-4 border bg-light-black mb-5">
                         <div class="block-title-6">
                             <h4 class="h5 border-primary">
-                                <span class="bg-primary text-white">
+                                <span class="bg-primary text-white font-navbar">
                                     Video
                                 </span>
                             </h4>
-                            <ul class="nav nav-tabs nav-block-link1 d-inline">
+                            <ul class="nav nav-tabs nav-block-link1 d-inline font-navbar ">
                                 <a href="">View All</a>
                             </ul>
                         </div>
                         <div id="carousel">
                             <div class="large-12 columns">
                                 <div class="owl-carousel owl-theme show-navigation owl-loaded owl-drag">
-                                    <div class="item">
+                                    <div class="item ">
                                         <img src="<?= base_url('assets/img/berita/') ?>1.jpg">
                                     </div>
                                     <div class="item">
@@ -227,11 +233,11 @@
                     <!-- Pemerintahan -->
                     <div class="block-title-6">
                         <h4 class="h5 border-primary">
-                            <span class="bg-primary text-white">
+                            <span class="bg-primary text-white font-navbar">
                                 Pemerintahan
                             </span>
                         </h4>
-                        <ul class="nav nav-tabs nav-block-link1 d-inline">
+                        <ul class="nav nav-tabs nav-block-link1 d-inline font-navbar">
                             <a href="">View All</a>
                         </ul>
                     </div>
@@ -243,7 +249,7 @@
                                         <img src="<?= base_url('assets/img/berita/') ?>1.jpg" alt="" sizes="(max-width: 360px) 100vw, 360px" width="360" height="202">
                                     </a>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body ">
                                     <h2 class="card-title h3-sm h1-md h3-lg font-title">
                                         <a href="http://google.com">
                                             Hujan Angin, Pohon Tumbang Halangi Jalan Masuk
@@ -260,7 +266,7 @@
                                             </span>
                                         </span>
                                     </div>
-                                    <p class="card-text font-body">This study examines the classroom talk about models and modelling of two secondary science teachers implementing a model-based inquiry instructional unit. The goal...</p>
+                                    <p class="card-text font-body" style="color: #4d4d4d">This study examines the classroom talk about models and modelling of two secondary science teachers implementing a model-based inquiry instructional unit. The goal...</p>
                                 </div>
 
                             </article>
@@ -269,7 +275,7 @@
                             <article class="card card-full hover-a mb-4">
                                 <div class="row">
                                     <div class="col-5 col-md-4 pe-2 pe-md-0">
-                                        <div class="ratio_115-80 image-wrapper">
+                                        <div class="ratio_115-80 image-wrapper ">
                                             <a href="http://google.com">
                                                 <img src="<?= base_url('assets/img/berita/') ?>1.jpg" alt="" sizes="(max-width: 360px) 100vw, 360px" width="127" height="80">
                                             </a>
@@ -277,7 +283,7 @@
                                     </div>
                                     <div class="col-7 col-md-8">
                                         <div class="card-body pt-0">
-                                            <div class="card-title h6 h5-sm h6-lg">
+                                            <div class="card-title h1-sm h1-md h1-lg font-title">
                                                 <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
                                             </div>
                                         </div>
@@ -293,7 +299,7 @@
                                     </div>
                                     <div class="col-7 col-md-8">
                                         <div class="card-body pt-0">
-                                            <div class="card-title h6 h5-sm h6-lg">
+                                            <div class="card-title h1-sm h1-md h1-lg font-title">
                                                 <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
                                             </div>
                                         </div>
@@ -309,7 +315,7 @@
                                     </div>
                                     <div class="col-7 col-md-8">
                                         <div class="card-body pt-0">
-                                            <div class="card-title h6 h5-sm h6-lg">
+                                            <div class="card-title h1-sm h1-md h1-lg font-title">
                                                 <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
                                             </div>
                                         </div>
@@ -325,7 +331,7 @@
                                     </div>
                                     <div class="col-7 col-md-8">
                                         <div class="card-body pt-0">
-                                            <div class="card-title h6 h5-sm h6-lg">
+                                            <div class="card-title h1-sm h1-md h1-lg font-title">
                                                 <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
                                             </div>
                                         </div>
@@ -340,11 +346,11 @@
                         <div class="col-md-6 col-12">
                             <div class="block-title-6">
                                 <h4 class="h5 border-primary">
-                                    <span class="bg-primary text-white">
+                                    <span class="bg-primary text-white font-navbar">
                                         Pariwisata
                                     </span>
                                 </h4>
-                                <ul class="nav nav-tabs nav-block-link1 d-inline">
+                                <ul class="nav nav-tabs nav-block-link1 d-inline font-navbar">
                                     <a href="">View All</a>
                                 </ul>
                             </div>
@@ -355,7 +361,7 @@
                                     </a>
                                 </div>
                                 <div class="card-body">
-                                    <h2 class="card-title h3-sm h1-md h3-lg">
+                                    <h2 class="card-title h3-sm h1-md h3-lg font-title">
                                         <a href="http://google.com">
                                             Hujan Angin, Pohon Tumbang Halangi Jalan Masuk
                                         </a>
@@ -371,7 +377,7 @@
                                             </span>
                                         </span>
                                     </div>
-                                    <p class="card-text">This study examines the classroom talk about models and modelling of two secondary science teachers implementing a model-based inquiry instructional unit. The goal...</p>
+                                    <p class="card-text font-body" style="color: #4d4d4d">This study examines the classroom talk about models and modelling of two secondary science teachers implementing a model-based inquiry instructional unit. The goal...</p>
                                 </div>
                             </article>
                             <div class="row">
@@ -384,7 +390,7 @@
                                 </div>
                                 <div class="col-7 col-md-8">
                                     <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
+                                        <div class="card-title h1-sm h1-md h1-lg font-title">
                                             <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
                                         </div>
                                     </div>
@@ -400,7 +406,7 @@
                                 </div>
                                 <div class="col-7 col-md-8">
                                     <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
+                                        <div class="card-title h1-sm h1-md h1-lg font-title">
                                             <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
                                         </div>
                                     </div>
@@ -412,11 +418,11 @@
                         <div class="col-md-6 col-12">
                             <div class="block-title-6">
                                 <h4 class="h5 border-primary">
-                                    <span class="bg-primary text-white">
+                                    <span class="bg-primary text-white font-navbar">
                                         Budaya
                                     </span>
                                 </h4>
-                                <ul class="nav nav-tabs nav-block-link1 d-inline">
+                                <ul class="nav nav-tabs nav-block-link1 d-inline font-navbar">
                                     <a href="">View All</a>
                                 </ul>
                             </div>
@@ -427,7 +433,7 @@
                                     </a>
                                 </div>
                                 <div class="card-body">
-                                    <h2 class="card-title h3-sm h1-md h3-lg">
+                                    <h2 class="card-title h3-sm h1-md h3-lg font-title">
                                         <a href="http://google.com">
                                             Hujan Angin, Pohon Tumbang Halangi Jalan Masuk
                                         </a>
@@ -443,7 +449,7 @@
                                             </span>
                                         </span>
                                     </div>
-                                    <p class="card-text">This study examines the classroom talk about models and modelling of two secondary science teachers implementing a model-based inquiry instructional unit. The goal...</p>
+                                    <p class="card-text font-body" style="color: #4d4d4d">This study examines the classroom talk about models and modelling of two secondary science teachers implementing a model-based inquiry instructional unit. The goal...</p>
                                 </div>
                             </article>
                             <div class="row">
@@ -456,7 +462,7 @@
                                 </div>
                                 <div class="col-7 col-md-8">
                                     <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
+                                        <div class="card-title h1-sm h1-md h1-lg font-title">
                                             <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
                                         </div>
                                     </div>
@@ -472,7 +478,7 @@
                                 </div>
                                 <div class="col-7 col-md-8">
                                     <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
+                                        <div class="card-title h1-sm h1-md h1-lg font-title">
                                             <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
                                         </div>
                                     </div>
@@ -505,11 +511,11 @@
                         <div class="col-md-12 col-12">
                             <div class="block-title-6">
                                 <h4 class="h5 border-primary">
-                                    <span class="bg-primary text-white">
+                                    <span class="bg-primary text-white font-navbar">
                                         Budaya
                                     </span>
                                 </h4>
-                                <ul class="nav nav-tabs nav-block-link1 d-inline">
+                                <ul class="nav nav-tabs nav-block-link1 d-inline font-navbar">
                                     <a href="">View All</a>
                                 </ul>
                             </div>
@@ -523,7 +529,7 @@
                                 </div>
                                 <div class="col-7 col-md-8">
                                     <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
+                                        <div class="card-title h1-sm h1-md h1-lg font-title">
                                             <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
                                         </div>
                                     </div>
@@ -539,7 +545,7 @@
                                 </div>
                                 <div class="col-7 col-md-8">
                                     <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
+                                        <div class="card-title h1-sm h1-md h1-lg font-title">
                                             <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
                                         </div>
                                     </div>
@@ -555,7 +561,7 @@
                                 </div>
                                 <div class="col-7 col-md-8">
                                     <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
+                                        <div class="card-title h1-sm h1-md h1-lg font-title">
                                             <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
                                         </div>
                                     </div>
@@ -571,7 +577,7 @@
                                 </div>
                                 <div class="col-7 col-md-8">
                                     <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
+                                        <div class="card-title h1-sm h1-md h1-lg font-title">
                                             <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
                                         </div>
                                     </div>
@@ -587,7 +593,7 @@
                                 </div>
                                 <div class="col-7 col-md-8">
                                     <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
+                                        <div class="card-title h1-sm h1-md h1-lg font-title">
                                             <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
                                         </div>
                                     </div>
@@ -603,7 +609,7 @@
                                 </div>
                                 <div class="col-7 col-md-8">
                                     <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
+                                        <div class="card-title h1-sm h1-md h1-lg font-title">
                                             <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
                                         </div>
                                     </div>
@@ -619,7 +625,7 @@
                                 </div>
                                 <div class="col-7 col-md-8">
                                     <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
+                                        <div class="card-title h1-sm h1-md h1-lg font-title">
                                             <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
                                         </div>
                                     </div>
@@ -643,11 +649,11 @@
                 <div class="block-area pt-4 pb-4 px-4 border bg-light-black mb-5">
                     <div class="block-title-6">
                         <h4 class="h5 border-primary">
-                            <span class="bg-primary text-white">
+                            <span class="bg-primary text-white font-navbar">
                                 Hot News
                             </span>
                         </h4>
-                        <ul class="nav nav-tabs nav-block-link1 d-inline">
+                        <ul class="nav nav-tabs nav-block-link1 d-inline font-navbar">
                             <a href="">View All</a>
                         </ul>
                     </div>
@@ -688,33 +694,103 @@
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-lg-4 footer-about wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                        <img class="logo-footer" src="assets/img/logo.png" alt="logo-footer" data-at2x="assets/img/logo.png">
-                        <p>
-                            We are a young company always looking for new and creative ideas to help you with our products in your everyday work.
-                        </p>
-                        <p><a href="#">Our Team</a></p>
-                    </div>
-                    <div class="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
-                        <h3>Contact</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Via Rossini 10, 10136 Turin Italy</p>
-                        <p><i class="fas fa-phone"></i> Phone: (0039) 333 12 68 347</p>
-                        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:hello@domain.com">hello@domain.com</a></p>
-                        <p><i class="fab fa-skype"></i> Skype: you_online</p>
-                    </div>
-                    <div class="col-md-4 col-lg-3 footer-social wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="col-md-4 col-lg-3 footer-social wow fadeInUp animated font-navbar" style="visibility: visible; animation-name: fadeInUp;">
                         <h3>Follow us</h3>
                         <p>
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                            Alamat : <br>
+                            Jl. .........
                         </p>
+                    </div>
+                    <div class="col-md-3 col-lg-3 offset-lg-1 footer-contact wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                        <h3>Kategori</h3>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">PERISTIWA</a></li>
+                                    <li><a href="#">PEMERINTAHAN</a></li>
+                                    <li><a href="#">HUKUM</a></li>
+                                    <li><a href="#">PENDIDIKAN</a></li>
+                                    <li><a href="#">EKONOMI</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">SOSIAL</a></li>
+                                    <li><a href="#">BUDAYA</a></li>
+                                    <li><a href="#">KESEHATAN</a></li>
+                                    <li><a href="#">OLAHRAGA</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-3 footer-about wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+
+                        <div class="row">
+                            <h3>Connect with us</h3>
+                            <p><a href="#" class="fa fa-facebook fatop top-facebook"></a>
+                                <a href="#" class="fa fa-google fatop top-google"></a>
+                                <a href="#" class="fa fa-youtube fatop top-youtube"></a>
+                                <a href="#" class="fa fa-instagram fatop top-youtube  "></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+
+
+        <!-- <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h5><i class="fa fa-road"></i> KATEGORI</h5>
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="list-unstyled">
+                            <li><a href="">Product</a></li>
+                            <li><a href="">Benefits</a></li>
+                            <li><a href="">Partners</a></li>
+                            <li><a href="">Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="list-unstyled">
+                            <li><a href="">Documentation</a></li>
+                            <li><a href="">Support</a></li>
+                            <li><a href="">Legal Terms</a></li>
+                            <li><a href="">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item"><a href="" class="nav-link pl-0"><i class="fa fa-facebook fa-lg"></i></a></li>
+                    <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-twitter fa-lg"></i></a></li>
+                    <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-github fa-lg"></i></a></li>
+                    <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-instagram fa-lg"></i></a></li>
+                </ul>
+                <br>
+            </div>
+            <div class="col-md-2">
+                <h5 class="text-md-right">Contact Us</h5>
+                <hr>
+            </div>
+            <div class="col-md-5">
+                <form>
+                    <fieldset class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <textarea class="form-control" id="exampleMessage" placeholder="Message"></textarea>
+                    </fieldset>
+                    <fieldset class="form-group text-xs-right">
+                        <button type="button" class="btn btn-secondary-outline btn-lg">Send</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+        </div> -->
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
@@ -729,19 +805,16 @@
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link scroll-link" href="#top-content">Top</a>
+                                        <a class="nav-link scroll-link" href="#top-content">IKLAN</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link scroll-link" href="#section-1">Section 1</a>
+                                        <a class="nav-link scroll-link" href="#section-1">PEDOMAN MEDIA CYBER</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link scroll-link" href="#section-2">Section 2</a>
+                                        <a class="nav-link scroll-link" href="#section-2">REDAKSI</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link scroll-link" href="#section-3">Section 3</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link scroll-link" href="#section-4">Section 4</a>
+                                        <a class="nav-link scroll-link" href="#section-3">TENTANG</a>
                                     </li>
                                 </ul>
                             </div>
