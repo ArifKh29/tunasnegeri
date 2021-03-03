@@ -12,7 +12,7 @@
     <title><?= $title; ?></title>
 
     <div>
-        <img src="<?= base_url('assets/img/logo/logo.png'); ?>" alt="logo">
+        <!-- <img src="<?= base_url('assets/img/logo/logo.png'); ?>" alt="logo"> -->
     </div>
 
     <!-- Custom fonts for this template-->

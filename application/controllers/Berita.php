@@ -23,7 +23,7 @@ class Berita extends CI_Controller
     {
         $data['title'] = 'Berita';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['berita'] = $this->db->query("SELECT *, tb_kategori.nama_kategori as kategori, tb_subkategori.nama_subkategori as subkategori FROM `tb_berita` JOIN tb_kategori JOIN tb_subkategori ON tb_berita.id_kategori=tb_kategori.id_kategori AND tb_kategori.id_kategori=tb_subkategori.id_kategori")->result();
+        $data['berita'] = $this->db->query("SELECT *, tb_kategori.nama_kategori as kategori, tb_subkategori.nama_subkategori as subkategori FROM `tb_berita` JOIN tb_kategori JOIN tb_subkategori ON tb_berita.id_kategori=tb_kategori.id_kategori AND tb_berita.id_subkategori=tb_subkategori.id_subkategori")->result();
 
 
         $this->load->view('templates/header', $data);
@@ -141,11 +141,18 @@ class Berita extends CI_Controller
         $tag = $this->input->post('tag');
 
         $upload_image = $_FILES['image']['name'];
+        $imageExtention = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
+        $filename = time() . '.' . $imageExtention;
+        // print_r($upload_image = $_FILES['image']);
+        // 
+
 
         if ($upload_image) {
-            $config['allowed_types'] = 'gif|jpg|png';
+
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
             $config['max_size']     = '2048';
             $config['upload_path'] = './assets/img/berita/';
+            $config['file_name'] = $filename;
 
             $this->load->library('upload', $config);
 
@@ -157,6 +164,6 @@ class Berita extends CI_Controller
             }
         }
 
-        $this->db->query("INSERT INTO `tb_berita`( `tanggal`, `judul_berita`, `cuplik`, `isi`, `foto`, `id_kategori`, `tags`, `id_subkategori`) VALUES ('$tanggal','$judul','$cuplikan','$isi','$upload_image','$kategori','$tag','$subkategori')");
+        $this->db->query("INSERT INTO `tb_berita`( `tanggal`, `judul_berita`, `cuplik`, `isi`, `foto`, `id_kategori`, `tags`, `id_subkategori`) VALUES ('$tanggal','$judul','$cuplikan','$isi','$filename','$kategori','$tag','$subkategori')");
     }
 }

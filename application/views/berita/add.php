@@ -35,7 +35,7 @@
                 <select name="kategori" class="form-control">
                     <?php
                     foreach ($kategori as $k) { ?>
-                        <option class="form-control" value="<?= $k->id_kategori ?>"><?= $k->nama_kategori ?> </option>
+                        <option type="checkbox" class="form-control" value="<?= $k->id_kategori ?>"><?= $k->nama_kategori ?> </option>
                     <?php
                     }
                     ?>

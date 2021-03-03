@@ -21,25 +21,26 @@ class Dashboard extends CI_Controller
 	 */
 	public function index()
 	{
-		// $cek = $this->uri->segment(3);
-		// $data['menu'] = $this->db->get('tb_kategori')->result();
-		// if($this->input->post('load_cat_posts')){
+		$cek = $this->uri->segment(3);
+		$data['menu'] = $this->db->get('tb_kategori')->result();
+		// if ($this->input->post('load_cat_posts')) {
 		// 	// echo "<script>console.log('hayooo')</script>";
 		// }
-		// if($cek == ''){
-		// 	$data['tittle'] = "Portal Berita";
-		// 	$data['berita'] = $this->db->get('tb_berita')->result();
-		// 	$this->load->view('frontend/template/header', $data);
-		// 	$this->load->view('frontend/template/top', $data);
-		// 	$this->load->view('frontend/index');
-		// }else{
-		// 	$data['tittle'] = "Portal Berita - ".$cek;
-		// 	$data['kategoriberita'] = $this->db->query("SELECT * FROM `tb_kategori` WHERE '".$cek."'");
-		// 	$this->load->view('frontend/template/header', $data);
-		// 	$this->load->view('frontend/template/top', $data);
-		// 	$this->load->view('frontend/menu_index');
-		// }
-		$this->load->view('portal/index');
+		if ($cek == '') {
+			$data['tittle'] = "Portal Berita";
+			$data['berita'] = $this->db->get('tb_berita')->result();
+			// $this->load->view('frontend/template/header', $data);
+			// $this->load->view('frontend/template/top', $data);
+			// $this->load->view('frontend/index');
+			$this->load->view('portal/index', $data);
+		} else {
+			$data['tittle'] = "Portal Berita - " . $cek;
+			$data['kategoriberita'] = $this->db->query("SELECT * FROM `tb_kategori` WHERE '" . $cek . "'");
+			// $this->load->view('frontend/template/header', $data);
+			// $this->load->view('frontend/template/top', $data);
+			// $this->load->view('frontend/menu_index');
+			$this->load->view('portal/index', $data);
+		}
 	}
 
 	public function detail()

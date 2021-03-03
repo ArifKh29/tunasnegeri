@@ -134,7 +134,7 @@ class Auth extends CI_Controller
 
         $this->email->initialize($config);
 
-        $this->email->from('emailasli9920@gmail.com', 'Portal Berita Kominfo Lumajang');
+        $this->email->from('emailasli9920@gmail.com', 'Tunas Negeri Network');
         $this->email->to($this->input->post('email'));
 
         if ($type == 'verify') {

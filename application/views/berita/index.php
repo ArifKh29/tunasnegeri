@@ -10,14 +10,14 @@
 
             <?= $this->session->flashdata('message'); ?>
 
-            <a href="<?= base_url('berita/add')?>" class="btn btn-primary mb-3">Add Berita</a>
+            <a href="<?= base_url('berita/add') ?>" class="btn btn-primary mb-3">Add Berita</a>
 
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Foto</th>
-                        <th scope="col">Judul</th>
+                        <th scope="col" style="width: 150px;">Judul</th>
                         <th scope="col">Kategori</th>
                         <th scope="col">Sub Kategori</th>
                         <th colspan="2" scope="col">Aksi</th>
@@ -29,9 +29,10 @@
                     <?php foreach ($berita as $m) : ?>
                         <tr>
                             <th scope="row"><?= $i; ?></th>
-                            <td><img height="100" weiht="100" src="<?= base_url('assets/img/berita/').$m->foto?>"></td>
-                            <td><?= $m->judul_berita?></td>
-                            <td><?= $m->kategori?></td>
+                            <td><img height="100" weiht="100" src="<?= base_url('assets/img/berita/') . $m->foto ?>"></td>
+                            <td><?= substr($m->judul_berita, 0, 50) ?> </td>
+                            <td><?= $m->kategori ?></td>
+                            <td><?= $m->subkategori ?></td>
                             <td>
                                 <a href="" class="badge badge-success">edit</a>
                                 <a href="" class="badge badge-danger">delete</a>

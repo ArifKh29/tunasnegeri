@@ -45,19 +45,12 @@
             <div class="bg-menu" style="background-color: #128673;">
                 <div class="container">
                     <nav class="nav-container style" id="draggable">
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
+                        <?php
+                        foreach ($menu as $m) { ?>
+                            <a href="<?= base_url() ?>" class="nav-item"><?= $m->nama_kategori ?></a>
+                        <?php
+                        }
+                        ?>
                     </nav>
                 </div>
             </div>
