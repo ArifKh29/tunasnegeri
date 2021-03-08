@@ -43,6 +43,16 @@ class Admin extends CI_Controller
         }
     }
 
+    public function roleEdit()
+    {
+        $role_id = $this->input->post('id');
+        $new_role = $this->input->post('role');
+        $this->db->query("UPDATE `user_role` SET `role`='$new_role' WHERE id='$role_id'");
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Role Berhasis Diubah</div>');
+        redirect('admin/role');
+    }
+
     public function roleAccess($role_id)
     {
         $data['title'] = 'Role Access';
@@ -81,5 +91,14 @@ class Admin extends CI_Controller
 
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         Akses dirubah</div>');
+    }
+
+    public function deleterole()
+    {
+        $role_id = $this->uri->segment(3);
+        $query = $this->db->query("DELETE FROM user_role WHERE id='$role_id'");
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Role Berhasil Dihapus</div>');
+        redirect('admin/role');
     }
 }

@@ -81,7 +81,93 @@
           });
       });
   </script>
+  <script type="text/javascript">
+      tampil_tag();
 
+      $(document).ready(function() {
+          $('#add').on('click', function() {
+              var idberita = $('#id_berita').val();
+              var tag = $('#tag').val();
+              $.ajax({
+                  type: "POST",
+                  url: "<?php echo base_url('Berita/addTag') ?>",
+                  dataType: "JSON",
+                  data: {
+                      idberita: idberita,
+                      tag: tag
+                  },
+
+                  success: function(data) {
+                      tampil_tag();
+                  }
+              });
+              return false;
+              //   console.log('asdasdsad')
+
+          });
+
+      });
+
+      //   $(document).ready(function() {
+      //       $('.detTag').on('click', function() {
+      //           //   var idtag = $('#detTag').val();
+      //           //   console.log("delete")
+      //           //   $.ajax({
+      //           //       type: "POST",
+      //           //       url: "<?php echo base_url('Berita/detTag') ?>",
+      //           //       dataType: "JSON",
+      //           //       data: {
+      //           //           idtag: idtag
+      //           //       },
+
+      //           //       success: function(data) {
+      //           //           tampil_tag();
+      //           //       }
+      //           //   });
+      //           //   return false;
+      //           //   console.log('asdasdsad')
+
+      //       });
+
+      //   });
+
+      $('#show_tag').on('click', '#delTag', function() {
+          var idtag = $(this).attr('data');
+          //   console.log(idtag)
+          $.ajax({
+              type: "POST",
+              url: "<?php echo base_url('Berita/delTag') ?>",
+              dataType: "JSON",
+              data: {
+                  idtag: idtag
+              },
+
+              success: function(data) {
+                  tampil_tag();
+              }
+          });
+          return false;
+      });
+
+      function tampil_tag() {
+          var idberita = $('#id_berita').val();
+          $.ajax({
+              type: 'GET',
+              url: '<?php echo base_url() ?>Berita/showTag/' + idberita,
+              async: true,
+              dataType: 'json',
+              success: function(data) {
+                  var html = '';
+                  var i;
+                  for (i = 0; i < data.length; i++) {
+                      html += "<a href='javascript:;' id='delTag' class='detTag badge badge-danger' data='" + data[i].id_tag + "' value='" + data[i].id_tag + "'>" + data[i].tag + "</a>";
+                  }
+                  $('#show_tag').html(html);
+              }
+
+          });
+      }
+  </script>
   </body>
 
   </html>

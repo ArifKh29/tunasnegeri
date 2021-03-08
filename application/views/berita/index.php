@@ -34,8 +34,8 @@
                             <td><?= $m->kategori ?></td>
                             <td><?= $m->subkategori ?></td>
                             <td>
-                                <a href="" class="badge badge-success">edit</a>
-                                <a href="" class="badge badge-danger">delete</a>
+                                <a href="<?= base_url('berita/edit/') . $m->id_berita ?>" class="badge badge-success">edit</a>
+                                <a href="<?= base_url('berita/delete/') . $m->id_berita ?>" class="badge badge-danger">delete</a>
                             </td>
                         </tr>
                         <?php $i++; ?>

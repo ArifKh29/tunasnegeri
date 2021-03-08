@@ -3,6 +3,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Dashboard extends CI_Controller
 {
+	public function __construct()
+	{
+		parent::__construct();
+	}
 
 	/**
 	 * Index Page for this controller.
@@ -32,14 +36,18 @@ class Dashboard extends CI_Controller
 			// $this->load->view('frontend/template/header', $data);
 			// $this->load->view('frontend/template/top', $data);
 			// $this->load->view('frontend/index');
+			$this->load->view('portal/template/header', $data);
 			$this->load->view('portal/index', $data);
+			$this->load->view('portal/template/footer');
 		} else {
 			$data['tittle'] = "Portal Berita - " . $cek;
 			$data['kategoriberita'] = $this->db->query("SELECT * FROM `tb_kategori` WHERE '" . $cek . "'");
 			// $this->load->view('frontend/template/header', $data);
 			// $this->load->view('frontend/template/top', $data);
 			// $this->load->view('frontend/menu_index');
+			$this->load->view('portal/template/header', $data);
 			$this->load->view('portal/index', $data);
+			$this->load->view('portal/template/footer');
 		}
 	}
 

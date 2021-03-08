@@ -3,9 +3,8 @@
 	padding-right: 50px;
 }
 
-.font-navbar{
+.font-navbar {
 	font-family: "Fira Sans", Sans-serif;
-	
 }
 
 .font-title {
@@ -15,7 +14,7 @@
 .font-body {
 	font-family: "Harmattan", Sans-serif;
 
-	font-size: 20px
+	font-size: 20px;
 }
 .nav-logo {
 	width: 249px;
@@ -30,9 +29,18 @@ a {
 	background-color: transparent;
 }
 
-.bg-menu {
-	border-radius: 15px 15px 15px 15px;
+.close {
+	cursor: pointer;
+	padding: 12px 16px;
+	transform: translate(0%, -50%);
 }
+
+.close:hover {
+	background: #128673;
+}
+/* .bg-menu {
+	border-radius: 15px 15px 15px 15px;
+} */
 
 .bg-primary,
 .progress-bar,
@@ -341,4 +349,11 @@ h6 > a {
 	background: #444;
 	text-align: left;
 	color: #aaa;
+}
+
+.make-sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	padding-top: 30px;
 }

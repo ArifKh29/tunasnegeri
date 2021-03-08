@@ -1,6 +1,5 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
     <hr>
@@ -12,9 +11,10 @@
             <?= form_open_multipart('berita/simpan'); ?>
             <label for="tanggal">Tanggal</label>
             <div class="form-group">
-                <input type="date" class="form-control" id="tanggal" name="tanggal">
+                <input type="date" class="form-control" id="tanggal" name="tanggal" required>
             </div>
-
+            <input type="hidden" name="author" value="<?= $user['id'] ?>">
+            <input type="hidden" name="id_berita" id="id_berita" value="<?= $kodeberita ?>">
             <label for="judul">Judul</label>
             <div class="form-group">
                 <input type="text" class="form-control" id="judul" name="judul">
@@ -22,12 +22,12 @@
 
             <label for="cuplikan">Cuplikan</label>
             <div class="form-group">
-                <textarea class="form-control" id="cuplikan" name="cuplikan"></textarea>
+                <textarea class="form-control" id="cuplikan" name="cuplikan" required></textarea>
             </div>
 
             <label for="isi">Isi</label>
             <div class="form-group">
-                <textarea id="ckeditor" name="isi" height="200"></textarea>
+                <textarea id="ckeditor" name="isi" height="200" required></textarea>
             </div>
 
             <label for="kategori">Kategori</label>
@@ -56,11 +56,20 @@
 
             <label for="tag">Tag</label>
             <div class="form-group">
-                <textarea class="form-control" id="tag" name="tag"></textarea>
+                <div class="row">
+                    <div class="col-md-5">
+                        <input class="form-control" id="tag" name="tag" />
+                    </div>
+                    <div id="add" class="btn btn-primary">Add</div>
+                </div>
+                <div class="tags">
+                    <span>Daftar Tag : </span>
+                    <div id='show_tag'></div>
+                </div>
             </div>
             <div class="form-group">
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="image" name="image">
+                    <input type="file" class="custom-file-input" id="image" name="image" required>
                     <label class="custom-file-label" for="image">Choose file</label>
                 </div>
             </div>
@@ -96,6 +105,31 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ModalHapus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+                <h4 class="modal-title" id="myModalLabel">Hapus Barang</h4>
+            </div>
+            <form class="form-horizontal">
+                <div class="modal-body">
+
+                    <input type="hidden" name="kode" id="textkode" value="">
+                    <div class="alert alert-warning">
+                        <p>Apakah Anda yakin mau memhapus barang ini?</p>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                    <button class="btn_hapus btn btn-danger" id="btn_hapus">Hapus</button>
                 </div>
             </form>
         </div>

@@ -3,6 +3,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Berita extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->helper("url");
+        $this->load->model('Berita_model');
+    }
+
 
     /**
      * Index Page for this controller.
@@ -40,13 +47,68 @@ class Berita extends CI_Controller
         $data['berita'] = $this->db->query("SELECT *, tb_kategori.nama_kategori as kategori, tb_subkategori.nama_subkategori as subkategori FROM `tb_berita` JOIN tb_kategori JOIN tb_subkategori ON tb_berita.id_kategori=tb_kategori.id_kategori AND tb_kategori.id_kategori=tb_subkategori.id_kategori")->result();
         $data['kategori'] = $this->db->get('tb_kategori')->result();
         $data['subkategori'] = $this->db->get('tb_subkategori')->result();
-        // print_r($data['berita']);
+
+        $lastKode = $this->Berita_model->cekkodeberita();
+
+
+        if ($lastKode == null) {
+            $data['kodeberita'] = 'BRT000001';
+        } else {
+            $nourut = substr($lastKode, 3, 6);
+            $newKode = $nourut + 1;
+            $huruf = "BRT";
+            $data['kodeberita'] = $huruf . sprintf("%06s", $newKode);
+            // $idberita = $kodeBaru + 1;
+        }
+
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
         $this->load->view('berita/add', $data);
         $this->load->view('templates/footer');
+    }
+
+    public function addTag()
+    {
+        $idberita = $this->input->post('idberita');
+        $tag = $this->input->post('tag');
+        $data = $this->Berita_model->addtag($idberita, $tag);
+        echo json_encode($data);
+    }
+
+    public function showTag()
+    {
+        $id = $this->uri->segment(3);
+        $data = $this->Berita_model->showtag();
+        echo json_encode($data);
+    }
+
+    public function delTag()
+    {
+        $idtag = $this->input->post('idtag');
+        $data = $this->Berita_model->deltag($idtag);
+        echo json_encode($data);
+    }
+
+    public function edit()
+    {
+        $data['title'] = 'Edit Berita';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('berita/add', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function delete()
+    {
+        $id_berita = $this->uri->segment(3);
+        $this->db->query("DELETE FROM `tb_berita` WHERE id_berita='$id_berita'");
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                    Berita berhasil di hapus</div>');
+        redirect('berita');
     }
 
     public function kategori()
@@ -132,6 +194,17 @@ class Berita extends CI_Controller
     public function simpan()
     {
         // $this->form_validation->set_rules('name', 'Full Name', 'required|trim');
+        $lastKode = $this->Berita_model->cekkodeberita();
+
+        if ($lastKode == null) {
+            $idberita = 'BRT000001';
+        } else {
+            $nourut = substr($lastKode, 3, 6);
+            $newKode = $nourut + 1;
+            $huruf = "BRT";
+            $idberita = $huruf . sprintf("%06s", $newKode);
+            // $idberita = $kodeBaru + 1;
+        }
         $tanggal = $this->input->post('tanggal');
         $judul = $this->input->post('judul');
         $cuplikan = $this->input->post('cuplikan');
@@ -139,10 +212,11 @@ class Berita extends CI_Controller
         $kategori = $this->input->post('kategori');
         $subkategori = $this->input->post('subkategori');
         $tag = $this->input->post('tag');
+        $author = $this->input->post('author');
 
         $upload_image = $_FILES['image']['name'];
         $imageExtention = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
-        $filename = time() . '.' . $imageExtention;
+        $filename = 'IMG_' . time() . '.' . $imageExtention;
         // print_r($upload_image = $_FILES['image']);
         // 
 
@@ -164,6 +238,9 @@ class Berita extends CI_Controller
             }
         }
 
-        $this->db->query("INSERT INTO `tb_berita`( `tanggal`, `judul_berita`, `cuplik`, `isi`, `foto`, `id_kategori`, `tags`, `id_subkategori`) VALUES ('$tanggal','$judul','$cuplikan','$isi','$filename','$kategori','$tag','$subkategori')");
+        $this->db->query("INSERT INTO `tb_berita`( `id_berita`, `tanggal`, `judul_berita`, `cuplik`, `isi`, `foto`, `id_kategori`, `tags`, `id_subkategori`,`author`) VALUES ('$idberita','$tanggal','$judul','$cuplikan','$isi','$filename','$kategori','$tag','$subkategori','$author')");
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                    Berita Berhasil Ditambahkan</div>');
+        redirect('berita');
     }
 }
