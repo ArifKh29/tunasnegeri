@@ -1,373 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= base_url() ?>assets/portaltn/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= base_url() ?>assets/portaltn/style.css">
-    <!-- <link rel="stylesheet" href="<?= base_url() ?>assets/portaltn/css/docs.theme.min.css"> -->
-    <link rel="stylesheet" href="<?= base_url() ?>assets/portaltn/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="<?= base_url() ?>assets/portaltn/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Tunas Negeri</title>
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <div class="container">
-            <img src="<?= base_url() ?>assets/portaltn/img/logo.png" alt="Logo Tunas Negeri" class="nav-logo">
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse" style="padding-left: 50px;">
-                <div class="navbar-nav">
-                    <form class="form-inline ml-auto">
-                        <input type="text" class="search__input" placeholder="Search">
-                    </form>
-
-                </div>
-            </div>
-            <div class="navbar-tools">
-                <div class="row">
-                    <!-- <a>Minggu, 28 Februari 2021</a> -->
-                    <a href="#" class="fa fa-facebook fatop top-facebook"></a>
-                    <a href="#" class="fa fa-google fatop top-google"></a>
-                    <a href="#" class="fa fa-youtube fatop top-youtube"></a>
-                    <a href="#" class="fa fa-instagram fatop top-youtube  "></a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <div class="sticky-top">
-        <div class="hr-nav ">
-            <!-- Class hr-nav-2-->
-            <div id="bg-menu" style='background-color: #128673;'>
-                <div class="container">
-                    <nav class="nav-container style" id="draggable">
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                        <a href="#!" class="nav-item">Latest</a>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="content pt-5">
-        <div class="container">
-            <div class=" row">
-                <div class="col-md-8 col-12">
-
-
-                </div>
-                <div class="col-md-4 col-12">
-                    <div class="side-nav">
-                        <!-- Iklan -->
-                        <div class="side-ads">
-                            <img class="side-img" src="<?= base_url('assets/img/') ?>side-ads.png">
-                        </div>
-                        <!-- End Iklan -->
-                        <div class="block-title-6">
-                            <h4 class="h5 border-primary">
-                                <span class="bg-primary text-white">
-                                    Sosial Media
-                                </span>
-                            </h4>
-                            <a href="#" class="fa fa-facebook fasm sosmed-facebook"></a>
-                            <a href="#" class="fa fa-google fasm sosmed-google"></a>
-                            <a href="#" class="fa fa-youtube fasm sosmed-youtube"></a>
-                            <a href="#" class="fa fa-instagram fasm sosmed-youtube  "></a>
-                        </div>
-                        <!-- Budaya -->
-                        <div class="col-md-12 col-12">
-                            <div class="block-title-6">
-                                <h4 class="h5 border-primary">
-                                    <span class="bg-primary text-white">
-                                        Budaya
-                                    </span>
-                                </h4>
-                                <ul class="nav nav-tabs nav-block-link1 d-inline">
-                                    <a href="">View All</a>
-                                </ul>
-                            </div>
-                            <div class="row">
-                                <div class="col-5 col-md-4 pe-2 pe-md-0">
-                                    <div class="ratio_115-80 image-wrapper">
-                                        <a href="http://google.com">
-                                            <img src="<?= base_url('assets/img/berita/') ?>1.jpg" alt="" sizes="(max-width: 360px) 100vw, 360px" width="127" height="80">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-7 col-md-8">
-                                    <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
-                                            <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-5 col-md-4 pe-2 pe-md-0">
-                                    <div class="ratio_115-80 image-wrapper">
-                                        <a href="http://google.com">
-                                            <img src="<?= base_url('assets/img/berita/') ?>1.jpg" alt="" sizes="(max-width: 360px) 100vw, 360px" width="127" height="80">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-7 col-md-8">
-                                    <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
-                                            <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-5 col-md-4 pe-2 pe-md-0">
-                                    <div class="ratio_115-80 image-wrapper">
-                                        <a href="http://google.com">
-                                            <img src="<?= base_url('assets/img/berita/') ?>1.jpg" alt="" sizes="(max-width: 360px) 100vw, 360px" width="127" height="80">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-7 col-md-8">
-                                    <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
-                                            <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-5 col-md-4 pe-2 pe-md-0">
-                                    <div class="ratio_115-80 image-wrapper">
-                                        <a href="http://google.com">
-                                            <img src="<?= base_url('assets/img/berita/') ?>1.jpg" alt="" sizes="(max-width: 360px) 100vw, 360px" width="127" height="80">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-7 col-md-8">
-                                    <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
-                                            <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-5 col-md-4 pe-2 pe-md-0">
-                                    <div class="ratio_115-80 image-wrapper">
-                                        <a href="http://google.com">
-                                            <img src="<?= base_url('assets/img/berita/') ?>1.jpg" alt="" sizes="(max-width: 360px) 100vw, 360px" width="127" height="80">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-7 col-md-8">
-                                    <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
-                                            <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-5 col-md-4 pe-2 pe-md-0">
-                                    <div class="ratio_115-80 image-wrapper">
-                                        <a href="http://google.com">
-                                            <img src="<?= base_url('assets/img/berita/') ?>1.jpg" alt="" sizes="(max-width: 360px) 100vw, 360px" width="127" height="80">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-7 col-md-8">
-                                    <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
-                                            <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-5 col-md-4 pe-2 pe-md-0">
-                                    <div class="ratio_115-80 image-wrapper">
-                                        <a href="http://google.com">
-                                            <img src="<?= base_url('assets/img/berita/') ?>1.jpg" alt="" sizes="(max-width: 360px) 100vw, 360px" width="127" height="80">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-7 col-md-8">
-                                    <div class="card-body pt-0">
-                                        <div class="card-title h6 h5-sm h6-lg">
-                                            <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Budaya -->
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<div class="content pt-5">
     <div class="container">
-        <div class="row">
+        <div class=" row">
+            <div class="col-md-8 col-12">
+                <header class="entry-header post-title">
+                    <h1 class="entry-title display-5 display-2-lg mt-2">Mir has winning mindset, ‘same calibre as Vinales, Rins’</h1>
+                    <div class="entry-meta post-atribute mb-3 small fw-normal text-muted">
+                        <span class="byline me-2 me-md-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-person me-1" viewBox="0 0 16 16">
+                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
+                            </svg> by<span class="author vcard"><a class="url fn n fw-bold" href="https://demo.bootstrap.news/default/author/aribudin/"> Ari Budin</a></span></span><span class="posted-on me-2 me-md-3">
+                            <span title="Posted on"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-pencil-square me-1" viewBox="0 0 16 16">
+                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
+                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
+                                </svg></span> <time class="entry-date published" datetime="2019-06-16T02:12:03+00:00">June 16, 2019</time> <time class="updated d-none d-md-inline-block" datetime="2019-06-28T08:23:17+00:00"> ( June 28, 2019 ) </time></span>
 
-        </div>
-    </div>
+                    </div>
+                </header>
 
-    <div class="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-lg-4 footer-about wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                        <img class="logo-footer" src="assets/img/logo.png" alt="logo-footer" data-at2x="assets/img/logo.png">
-                        <p>
-                            We are a young company always looking for new and creative ideas to help you with our products in your everyday work.
-                        </p>
-                        <p><a href="#">Our Team</a></p>
-                    </div>
-                    <div class="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
-                        <h3>Contact</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Via Rossini 10, 10136 Turin Italy</p>
-                        <p><i class="fas fa-phone"></i> Phone: (0039) 333 12 68 347</p>
-                        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:hello@domain.com">hello@domain.com</a></p>
-                        <p><i class="fab fa-skype"></i> Skype: you_online</p>
-                    </div>
-                    <div class="col-md-4 col-lg-3 footer-social wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                        <h3>Follow us</h3>
-                        <p>
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-pinterest"></i></a>
-                        </p>
-                    </div>
-                </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5 footer-copyright">
-                        <p>© Bootstrap Footer Template by <a href="https://azmind.com">AZMIND</a></p>
+            <div class="col-md-4 col-12">
+                <div class="side-nav">
+                    <!-- Iklan -->
+                    <div class="side-ads">
+                        <img class="side-img" src="<?= base_url('assets/img/') ?>side-ads.png">
                     </div>
-                    <div class="col-md-7 footer-menu">
-                        <nav class="navbar navbar-dark navbar-expand-md">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarNav">
-                                <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link scroll-link" href="#top-content">Top</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link scroll-link" href="#section-1">Section 1</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link scroll-link" href="#section-2">Section 2</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link scroll-link" href="#section-3">Section 3</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link scroll-link" href="#section-4">Section 4</a>
-                                    </li>
-                                </ul>
+                    <!-- End Iklan -->
+                    <div class="block-title-6">
+                        <h4 class="h5 border-primary">
+                            <span class="bg-primary text-white">
+                                Sosial Media
+                            </span>
+                        </h4>
+                        <a href="#" class="fa fa-facebook fasm sosmed-facebook"></a>
+                        <a href="#" class="fa fa-google fasm sosmed-google"></a>
+                        <a href="#" class="fa fa-youtube fasm sosmed-youtube"></a>
+                        <a href="#" class="fa fa-instagram fasm sosmed-youtube  "></a>
+                    </div>
+
+                </div>
+                <div class="side-nav make-sticky">
+                    <div class="block-title-6">
+                        <h4 class="h5 border-primary">
+                            <span class="bg-primary text-white font-navbar">
+                                Latest Post
+                            </span>
+                        </h4>
+                        <ul class="nav nav-tabs nav-block-link1 d-inline font-navbar">
+                            <a href="">View All</a>
+                        </ul>
+                    </div>
+                    <?php $i = 0;
+                    foreach ($berita as $latest) {
+
+                        if (++$i > 5) break;
+                    ?>
+                        <div class="row">
+                            <div class="col-5 col-md-5 pe-2 pe-md-0">
+                                <div class="ratio_115-80 image-wrapper">
+                                    <a href="<?= base_url('dashboard/detail/') . $latest->id_berita ?>">
+                                        <img src="<?= base_url('assets/img/berita/') . $latest->foto ?>" alt="" sizes="(max-width: 360px) 100vw, 360px" width="127" height="80">
+                                    </a>
+                                </div>
                             </div>
-                        </nav>
-                    </div>
+                            <div class="col-7 col-md-7 text-title">
+                                <div class="card-body pt-0 text-title">
+                                    <div class="card-title h1-sm h1-md h1-lg font-title">
+                                        <a href="<?= base_url('dashboard/detail/') . $latest->id_berita ?>"><?= $latest->judul_berita ?> </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                    } ?>
                 </div>
             </div>
+
         </div>
+
     </div>
 
-    <!-- <div class="container">
-        <div id="carousel">
-            <div class="row">
-                <div class="large-12 columns">
-                    <div class="owl-carousel owl-theme">
-                        <div class="item">
-                            <img src="<?= base_url('assets/img/berita/') ?>1.jpg">
-                        </div>
-                        <div class="item">
-                            <img src="<?= base_url('assets/img/berita/') ?>1.jpg">
-                        </div>
-                        <div class="item">
-                            <img src="<?= base_url('assets/img/berita/') ?>1.jpg">
-                        </div>
-                        <div class="item">
-                            <img src="<?= base_url('assets/img/berita/') ?>1.jpg">
-                        </div>
-                        <div class="item">
-                            <img src="<?= base_url('assets/img/berita/') ?>1.jpg">
-                        </div>
-                        <div class="item">
-                            <img src="<?= base_url('assets/img/berita/') ?>1.jpg">
-                        </div>
-                        <div class="item">
-                            <img src="<?= base_url('assets/img/berita/') ?>1.jpg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-</body>
-
-
-</html>
-
-
-
-<!-- <script src="<?= base_url() ?>assets/portaltn/js/jquery.min.js"></script> -->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="<?= base_url() ?>assets/portaltn/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<?= base_url() ?>assets/portaltn/js/owl.carousel.js"></script>
-<!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
-<script>
-    $(document).ready(function() {
-        var owl = $('.owl-carousel');
-        owl.owlCarousel({
-            margin: 10,
-            nav: true,
-            loop: false,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 5
-                }
-            }
-        })
-    })
-</script>
-<script>
-    $(function() {
-        $("#draggable").draggable({
-            axis: "x",
-            containment: "parent"
-        });
-    });
-</script>
+</div>

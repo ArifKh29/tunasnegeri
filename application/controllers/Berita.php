@@ -79,8 +79,10 @@ class Berita extends CI_Controller
 
     public function showTag()
     {
-        $id = $this->uri->segment(3);
-        $data = $this->Berita_model->showtag();
+        $idberita = $this->input->post('idberita'); //$this->uri->segment(4);
+        // echo 'asasss' . $idberita;
+        $data = $this->Berita_model->showtag($idberita);
+        // echo $idberita;
         echo json_encode($data);
     }
 
@@ -93,12 +95,16 @@ class Berita extends CI_Controller
 
     public function edit()
     {
+        $idberita = $this->uri->segment(3);
         $data['title'] = 'Edit Berita';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['berita'] = $this->db->query("SELECT *, tb_kategori.nama_kategori as kategori, tb_subkategori.nama_subkategori as subkategori FROM `tb_berita` JOIN tb_kategori JOIN tb_subkategori ON tb_berita.id_kategori=tb_kategori.id_kategori AND tb_berita.id_subkategori=tb_subkategori.id_subkategori WHERE id_berita='$idberita'")->row_array();
+        $data['kategori'] = $this->db->get('tb_kategori')->result();
+        $data['subkategori'] = $this->db->get('tb_subkategori')->result();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('berita/add', $data);
+        $this->load->view('berita/edit', $data);
         $this->load->view('templates/footer');
     }
 
@@ -191,6 +197,48 @@ class Berita extends CI_Controller
         redirect('berita/kategori');
     }
 
+    public function editberita()
+    {
+        $idberita = $this->input->post('id_berita');
+        $tanggal = $this->input->post('tanggal');
+        $judul = $this->input->post('judul');
+        $cuplikan = $this->input->post('cuplikan');
+        $isi = $this->input->post('isi');
+        $kategori = $this->input->post('kategori');
+        $subkategori = $this->input->post('subkategori');
+        $tag = $this->input->post('tag');
+        $author = $this->input->post('author');
+
+        $upload_image = $_FILES['image']['name'];
+        $imageExtention = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
+        $filename = 'IMG_' . time() . '.' . $imageExtention;
+
+
+        if ($upload_image) {
+
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['max_size']     = '2048';
+            $config['upload_path'] = './assets/img/berita/';
+            $config['file_name'] = $filename;
+
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload('image')) {
+                $new_image = $this->upload->data('file_name');
+            } else {
+                echo $this->upload->display_errors();
+            }
+            $this->db->query("UPDATE `tb_berita` SET `tanggal`='$tanggal',`judul_berita`='$judul',`cuplik`='$cuplikan',`isi`='$isi',`foto`='$filename',`id_kategori`='$kategori',`tags`='$tag',`id_subkategori`='$subkategori',`author`='$author' WHERE id_berita='$idberita'");
+        } else {
+            $this->db->query("UPDATE `tb_berita` SET `tanggal`='$tanggal',`judul_berita`='$judul',`cuplik`='$cuplikan',`isi`='$isi',`id_kategori`='$kategori',`tags`='$tag',`id_subkategori`='$subkategori',`author`='$author' WHERE id_berita='$idberita'");
+        }
+
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                    Berita Berhasil Ditambahkan</div>');
+        redirect('berita');
+    }
+
     public function simpan()
     {
         // $this->form_validation->set_rules('name', 'Full Name', 'required|trim');
@@ -217,10 +265,6 @@ class Berita extends CI_Controller
         $upload_image = $_FILES['image']['name'];
         $imageExtention = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
         $filename = 'IMG_' . time() . '.' . $imageExtention;
-        // print_r($upload_image = $_FILES['image']);
-        // 
-
-
         if ($upload_image) {
 
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
@@ -232,7 +276,6 @@ class Berita extends CI_Controller
 
             if ($this->upload->do_upload('image')) {
                 $new_image = $this->upload->data('file_name');
-                // $this->db->set('foro', $new_image);
             } else {
                 echo $this->upload->display_errors();
             }

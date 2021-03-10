@@ -62,9 +62,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <input type="text" class="form-control" id="subkategori" required name="subkategori" placeholder="Nama Sub Kategori">
-
                     </div>
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>

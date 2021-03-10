@@ -26,16 +26,37 @@ class Dashboard extends CI_Controller
 	public function index()
 	{
 		$cek = $this->uri->segment(3);
-		$data['menu'] = $this->db->get('tb_kategori')->result();
+		$data['menu'] = $this->db->query("SELECT * FROM `tb_kategori` WHERE status='show'")->result();
 		// if ($this->input->post('load_cat_posts')) {
 		// 	// echo "<script>console.log('hayooo')</script>";
 		// }
 		if ($cek == '') {
 			$data['tittle'] = "Portal Berita";
 			$data['berita'] = $this->db->get('tb_berita')->result();
-			// $this->load->view('frontend/template/header', $data);
-			// $this->load->view('frontend/template/top', $data);
-			// $this->load->view('frontend/index');
+			$today = date('Y-m-d');
+			$last30day = date('Y-m-d', strtotime('-30 days', strtotime($today)));
+			$data['headline'] = $this->db->query("SELECT * from tb_berita GROUP BY `tanggal` DESC LIMIT 3");
+			$data['popular'] = $this->db->query("SELECT * from tb_berita WHERE tanggal BETWEEN '$last30day' AND '$today' GROUP BY lihat DESC LIMIT 4")->result();
+			$data['berita'] = $this->db->query("SELECT * FROM `tb_berita` JOIN tb_kategori JOIN user ON tb_berita.id_kategori=tb_kategori.id_kategori AND tb_berita.author=user.id GROUP BY tanggal DESC")->result();
+
+			$data['peristiwa'] = array();
+			foreach ($data['berita'] as $peristiwa) {
+				if ($peristiwa->nama_kategori == 'Peristiwa') {
+					array_push($data['peristiwa'], $peristiwa);
+				}
+			}
+			$data['pemerintahan'] = array();
+			foreach ($data['berita'] as $pemerintahan) {
+				if ($pemerintahan->nama_kategori == 'Pemerintahan') {
+					array_push($data['pemerintahan'], $pemerintahan);
+				}
+			}
+			$data['budaya'] = array();
+			foreach ($data['berita'] as $budaya) {
+				if ($budaya->nama_kategori == 'Budaya') {
+					array_push($data['budaya'], $budaya);
+				}
+			}
 			$this->load->view('portal/template/header', $data);
 			$this->load->view('portal/index', $data);
 			$this->load->view('portal/template/footer');
@@ -53,7 +74,15 @@ class Dashboard extends CI_Controller
 
 	public function detail()
 	{
+		$id = $this->uri->segment(3);
+		$data['menu'] = $this->db->query("SELECT * FROM `tb_kategori` WHERE status='show'")->result();
+		$data['tittle'] = "Tunas Negeri";
+		// $data['kategoriberita'] = $this->db->query("SELECT * FROM `tb_kategori` WHERE '" . $cek . "'");
+		$data['detail'] = $this->db->query("SELECT * FROM tb_berita JOIN tb_kategori JOIN user ON tb_berita.id_kategori=tb_kategori.id_kategori AND tb_berita.author=user.id WHERE id_berita='$id'")->row_array();
+		$data['berita'] = $this->db->query("SELECT * FROM `tb_berita` JOIN tb_kategori JOIN user ON tb_berita.id_kategori=tb_kategori.id_kategori AND tb_berita.author=user.id GROUP BY tanggal DESC")->result();
+		$this->load->view('portal/template/header', $data);
 		$this->load->view('portal/detail');
+		$this->load->view('portal/template/footer');
 	}
 
 	public function get()

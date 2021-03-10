@@ -151,12 +151,17 @@
 
       function tampil_tag() {
           var idberita = $('#id_berita').val();
+          //   console.log(idberita)
           $.ajax({
-              type: 'GET',
-              url: '<?php echo base_url() ?>Berita/showTag/' + idberita,
+              url: "<?php echo site_url('Berita/showTag'); ?>",
+              method: "POST",
+              data: {
+                  idberita: idberita
+              },
               async: true,
               dataType: 'json',
               success: function(data) {
+                  console.log(data);
                   var html = '';
                   var i;
                   for (i = 0; i < data.length; i++) {
@@ -164,7 +169,6 @@
                   }
                   $('#show_tag').html(html);
               }
-
           });
       }
   </script>

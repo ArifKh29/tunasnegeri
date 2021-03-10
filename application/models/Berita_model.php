@@ -25,9 +25,10 @@ class Berita_model extends CI_Model
         return $query;
     }
 
-    function showtag($idtag)
+    function showtag($idberita)
     {
-        $query = $this->db->query("SELECT * from `tb_tagberita` WHERE id='$idtag'");
+
+        $query = $this->db->query("SELECT * from `tb_tagberita` WHERE id_berita='$idberita'");
         return $query->result();
     }
 }
