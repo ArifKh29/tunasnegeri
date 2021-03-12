@@ -57,13 +57,12 @@
                     $i = 1;
                     foreach ($popular as $p) { ?>
                         <div class="row pb-3">
-                            <div class="col-3">
+                            <div class="col-lg-3 col-3 pr-0 pb-0">
                                 <div class="popular-image">
-                                    <a href="<?= base_url('dashboard/detail/') . $p->id_berita ?>"><img style="width: 80px ; height: 80px " src="<?= base_url('assets/portaltn/img/icon/') ?><?= $i ?>.png" alt="Popular Post"></a>
+                                    <a href="<?= base_url('dashboard/detail/') . $p->id_berita ?>"><img class="sd-popular-image" src="<?= base_url('assets/portaltn/img/icon/') ?><?= $i ?>.png" alt="Popular Post"></a>
                                 </div>
-
                             </div>
-                            <div class="col-9">
+                            <div class="col-lg-9 col-9">
                                 <div class="sd-popular-text font-title">
                                     <a href="<?= base_url('dashboard/detail/') . $p->id_berita ?>"><?= substr($p->judul_berita, 0, 60) . '...' ?></a>
                                 </div>
@@ -333,64 +332,64 @@
                                 <a href="">View All</a>
                             </ul>
                         </div>
-                        <article class="card card-full hover-a mb-4">
-                            <div class="image-wrapper">
-                                <a href="http://google.com">
-                                    <img src="<?= base_url('assets/img/berita/') ?>1.jpg" alt="" sizes="(max-width: 360px) 100vw, 360px" width="360" height="202">
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <h2 class="card-title h3-sm h1-md h3-lg font-title">
-                                    <a href="http://google.com">
-                                        Hujan Angin, Pohon Tumbang Halangi Jalan Masuk
+                        <?php $i = 0;
+                        $beritabudaya = $budaya;
+                        foreach ($beritabudaya as $bud) {
+                            if (++$i > 1) break;
+                        ?>
+                            <article class="card card-full hover-a mb-4">
+                                <div class="image-wrapper">
+                                    <a href="<?= base_url('dashboard/detail/') . $bud->id_berita ?>">
+                                        <img src="<?= base_url('assets/img/berita/') . $bud->foto ?>" alt="" sizes="(max-width: 360px) 100vw, 360px" width="360" height="202">
                                     </a>
-                                </h2>
-                                <div class="card-text mb-2 text-muted small">
-                                    <span class="font-weight-bold d-none d-sm-inline mr-1">
-                                        <a href="http://google.com">Arip</a>
-                                    </span>
-                                    <time class="news-date">20 Februari 2021</time>
-                                    <span class="float-right">
-                                        <span class="fa fa-comments" aria-hidden="true">
-                                            9
+                                </div>
+                                <div class="card-body">
+                                    <h2 class="card-title h3-sm h1-md h3-lg font-title">
+                                        <a href="<?= base_url('dashboard/detail/') . $bud->id_berita ?>">
+                                            <?= $bud->judul_berita ?>
+                                        </a>
+                                    </h2>
+                                    <div class="card-text mb-2 text-muted small">
+                                        <span class="font-weight-bold d-none d-sm-inline mr-1">
+                                            <a href="http://google.com">Arip</a>
                                         </span>
-                                    </span>
+                                        <time class="news-date">20 Februari 2021</time>
+                                        <span class="float-right">
+                                            <span class="fa fa-comments" aria-hidden="true">
+                                                9
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <p class="card-text font-body" style="color: #4d4d4d"><?= substr($bud->cuplik, 0, 150) . '...' ?></p>
                                 </div>
-                                <p class="card-text font-body" style="color: #4d4d4d">This study examines the classroom talk about models and modelling of two secondary science teachers implementing a model-based inquiry instructional unit. The goal...</p>
-                            </div>
-                        </article>
-                        <div class="row">
-                            <div class="col-5 col-md-5 pe-2 pe-md-0">
-                                <div class="ratio_115-80 image-wrapper">
-                                    <a href="http://google.com">
-                                        <img src="<?= base_url('assets/img/berita/') ?>1.jpg" alt="" sizes="(max-width: 360px) 100vw, 360px" width="127" height="80">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-7 col-md-7 text-title">
-                                <div class="card-body pt-0 text-title">
-                                    <div class="card-title h1-sm h1-md h1-lg font-title">
-                                        <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
+                            </article>
+                        <?php } ?>
+                        <?php $i = 0;
+                        // $beritapemerintah = $berita;
+                        $subberitabudaya = $budaya;
+                        unset($subberitabudaya[0]);
+                        foreach ($subberitabudaya as $bud) {
+                            if ($per->nama_kategori == 'Peristiwa') {
+                                if (++$i > 2) break;
+                        ?>
+                                <div class="row">
+                                    <div class="col-5 col-md-5 pe-2 pe-md-0">
+                                        <div class="ratio_115-80 image-wrapper">
+                                            <a href="<?= base_url('dashboard/detail/') . $bud->id_berita ?>">
+                                                <img src="<?= base_url('assets/img/berita/') . $bud->foto ?>" alt="" sizes="(max-width: 360px) 100vw, 360px" width="127" height="80">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-7 col-md-7 text-title">
+                                        <div class="card-body pt-0 text-title">
+                                            <div class="card-title h1-sm h1-md h1-lg font-title">
+                                                <a href="<?= base_url('dashboard/detail/') . $bud->id_berita ?>"><?= $bud->judul_berita ?> </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5 col-md-5 pe-2 pe-md-0">
-                                <div class="ratio_115-80 image-wrapper">
-                                    <a href="http://google.com">
-                                        <img src="<?= base_url('assets/img/berita/') ?>1.jpg" alt="" sizes="(max-width: 360px) 100vw, 360px" width="127" height="80">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-7 col-md-7 text-title">
-                                <div class="card-body pt-0 text-title">
-                                    <div class="card-title h1-sm h1-md h1-lg font-title">
-                                        <a href="http://google.com">Hujan Angin, Pohon Tumbang Halangi Jalan Masuk </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php }
+                        } ?>
                     </div>
                     <!-- End Budaya -->
                 </div>
@@ -512,7 +511,7 @@
 
         <div class="row">
 
-            <div class="col-md-8">
+            <div class="col-lg-8 col-md-12 col-12">
                 <!-- Pemerintahan -->
                 <div class="block-title-6">
                     <h4 class="h5 border-primary">
@@ -532,14 +531,14 @@
                             if (++$i > 5) break;
                         ?>
                             <div class="row pb-4">
-                                <div class="col-sm-6 col-md-12 col-lg-6 ">
+                                <div class="col-md-12 col-lg-12 col-12 ">
                                     <div class="ratio_360-202 image-wrapper">
                                         <a href="<?= base_url('detail/') . $latest->id_berita ?>/">
                                             <img width="360" height="202" src="<?= base_url('assets/img/berita/') . $latest->foto ?>" sizes="(max-width: 360px) 100vw, 360px" data-was-processed="true">
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-md-12 col-lg-6">
+                                <div class="col-md-12 col-lg-12 col-12 ">
                                     <div class="card-body pt-3 pt-sm-0 pt-md-3 pt-lg-0">
                                         <h3 class="card-title h3-sm h1-md h3-lg font-title">
                                             <a href="<?= base_url('detail/') . $latest->id_berita ?>"><?= substr($latest->judul_berita, 0, 100)  ?></a>
@@ -557,7 +556,62 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-4 scol-md-12 col-12">
+                <div class="side-nav">
+                    <!-- Iklan -->
+                    <div class="side-ads">
+                        <img class="side-img" src="<?= base_url('assets/img/') ?>side-ads.png">
+                    </div>
+                    <!-- End Iklan -->
+                    <!-- <div class="block-title-6">
+                        <h4 class="h5 border-primary">
+                            <span class="bg-primary text-white">
+                                Sosial Media
+                            </span>
+                        </h4>
+                        <a href="#" class="fa fa-facebook fasm sosmed-facebook"></a>
+                        <a href="#" class="fa fa-google fasm sosmed-google"></a>
+                        <a href="#" class="fa fa-youtube fasm sosmed-youtube"></a>
+                        <a href="#" class="fa fa-instagram fasm sosmed-youtube  "></a>
+                    </div> -->
 
+                </div>
+                <!-- <div class="side-nav make-sticky">
+                    <div class="block-title-6">
+                        <h4 class="h5 border-primary">
+                            <span class="bg-primary text-white font-navbar">
+                                Latest Post
+                            </span>
+                        </h4>
+                        <ul class="nav nav-tabs nav-block-link1 d-inline font-navbar">
+                            <a href="">View All</a>
+                        </ul>
+                    </div>
+                    <?php $i = 0;
+                    foreach ($berita as $latest) {
+
+                        if (++$i > 5) break;
+                    ?>
+                        <div class="row">
+                            <div class="col-5 col-md-5 pe-2 pe-md-0">
+                                <div class="ratio_115-80 image-wrapper">
+                                    <a href="<?= base_url('dashboard/detail/') . $latest->id_berita ?>">
+                                        <img src="<?= base_url('assets/img/berita/') . $latest->foto ?>" alt="" sizes="(max-width: 360px) 100vw, 360px" width="127" height="80">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-7 text-title">
+                                <div class="card-body pt-0 text-title">
+                                    <div class="card-title h1-sm h1-md h1-lg font-title">
+                                        <a href="<?= base_url('dashboard/detail/') . $latest->id_berita ?>"><?= $latest->judul_berita ?> </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                    } ?>
+                </div> -->
+            </div>
         </div>
     </div>
 </div>

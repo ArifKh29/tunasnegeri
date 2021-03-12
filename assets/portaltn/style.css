@@ -38,9 +38,6 @@ a {
 .close:hover {
 	background: #128673;
 }
-/* .bg-menu {
-	border-radius: 15px 15px 15px 15px;
-} */
 
 .bg-primary,
 .progress-bar,
@@ -52,6 +49,10 @@ a {
 .dropdown-menu,
 .border-primary {
 	border-color: #128673 !important;
+}
+
+.sd-popular-image {
+	width: 100%;
 }
 
 .search__input {
@@ -367,6 +368,16 @@ h6 > a {
 	border: none i !important;
 }
 
+.p-navbar {
+	padding-left: 50px;
+}
+
+@media only screen and (max-width: 320px) {
+	.nav-logo {
+		width: 200px;
+	}
+}
+
 @media only screen and (max-width: 600px) {
 }
 
@@ -376,6 +387,13 @@ h6 > a {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
+	.p-navbar {
+		padding-left: 0px;
+	}
+
+	.search__input {
+		width: 100%;
+	}
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

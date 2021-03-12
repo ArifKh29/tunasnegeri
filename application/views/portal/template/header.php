@@ -26,23 +26,22 @@
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse" style="padding-left: 50px;">
-                <div class="navbar-nav">
-                    <form class="form-inline ml-auto">
-                        <input type="text" class="search__input" placeholder="Search">
-                    </form>
-
-                </div>
+            <div class="collapse navbar-collapse p-navbar" id="navbarCollapse" ">
+                <div class=" navbar-nav">
+                <form class="form-inline">
+                    <input type="text" class="search__input" placeholder="Search">
+                </form>
             </div>
-            <div class="navbar-tools">
-                <div class="row">
-                    <!-- <a>Minggu, 28 Februari 2021</a> -->
-                    <a href="#" class="fa fa-facebook fatop top-facebook"></a>
-                    <a href="#" class="fa fa-google fatop top-google"></a>
-                    <a href="#" class="fa fa-youtube fatop top-youtube"></a>
-                    <a href="#" class="fa fa-instagram fatop top-youtube  "></a>
-                </div>
+        </div>
+        <div class="navbar-tools">
+            <div class="row">
+                <!-- <a>Minggu, 28 Februari 2021</a> -->
+                <a href="#" class="fa fa-facebook fatop top-facebook"></a>
+                <a href="#" class="fa fa-google fatop top-google"></a>
+                <a href="#" class="fa fa-youtube fatop top-youtube"></a>
+                <a href="#" class="fa fa-instagram fatop top-youtube  "></a>
             </div>
+        </div>
         </div>
     </nav>
     <div class="sticky-top">
@@ -54,7 +53,7 @@
                         <a href="<?= base_url() ?>" class="nav-item">Home</a>
                         <?php
                         foreach ($menu as $m) { ?>
-                            <a href="<?= base_url() ?>" class="nav-item"><?= $m->nama_kategori ?></a>
+                            <a href="<?= base_url('Dashboard/kategori/') . $m->nama_kategori ?>" class="nav-item"><?= $m->nama_kategori ?></a>
                         <?php
                         }
                         ?>
