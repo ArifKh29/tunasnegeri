@@ -10,7 +10,6 @@ class Berita extends CI_Controller
         $this->load->model('Berita_model');
     }
 
-
     /**
      * Index Page for this controller.
      *
@@ -31,7 +30,6 @@ class Berita extends CI_Controller
         $data['title'] = 'Berita';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['berita'] = $this->db->query("SELECT *, tb_kategori.nama_kategori as kategori, tb_subkategori.nama_subkategori as subkategori FROM `tb_berita` JOIN tb_kategori JOIN tb_subkategori ON tb_berita.id_kategori=tb_kategori.id_kategori AND tb_berita.id_subkategori=tb_subkategori.id_subkategori")->result();
-
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -67,6 +65,20 @@ class Berita extends CI_Controller
         $this->load->view('templates/topbar', $data);
         $this->load->view('berita/add', $data);
         $this->load->view('templates/footer');
+    }
+
+    public function addDetKategori()
+    {
+        $idberita = $this->input->post('idberita');
+        $idkategori = $this->input->post('idkategori');
+        $data = $this->Berita_model->adddetkategori($idberita, $idkategori);
+        echo json_encode($data);
+    }
+    public function showDetKategori()
+    {
+        $idberita = $this->input->post('idberita');
+        $data = $this->Berita_model->showdetkategori($idberita);
+        echo json_encode($data);
     }
 
     public function addTag()
@@ -190,7 +202,6 @@ class Berita extends CI_Controller
     {
         $kategori = $this->input->post('kategori');
         $status = $this->input->post('status');
-
         $this->db->query("INSERT INTO `tb_kategori`( `nama_kategori`, `status`) VALUES ('$kategori','$status')");
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
                     Kategori Berhasil Ditambahkan</div>');
@@ -251,7 +262,6 @@ class Berita extends CI_Controller
             $newKode = $nourut + 1;
             $huruf = "BRT";
             $idberita = $huruf . sprintf("%06s", $newKode);
-            // $idberita = $kodeBaru + 1;
         }
         $tanggal = $this->input->post('tanggal');
         $judul = $this->input->post('judul');
@@ -261,7 +271,6 @@ class Berita extends CI_Controller
         $subkategori = $this->input->post('subkategori');
         $tag = $this->input->post('tag');
         $author = $this->input->post('author');
-
         $upload_image = $_FILES['image']['name'];
         $imageExtention = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
         $filename = 'IMG_' . time() . '.' . $imageExtention;

@@ -75,14 +75,13 @@ class Dashboard extends CI_Controller
 	{
 		$data['tittle'] = "Portal Berita - ";
 		$namakategori = $this->uri->segment(3);
+		$data['kategori'] = $namakategori;
 		$data['menu'] = $this->db->query("SELECT * FROM `tb_kategori` WHERE status='show'")->result();
 		// $data['kategoriberita'] = $this->db->query("SELECT * FROM `tb_kategori` WHERE '" . $cek . "'");
 		$data['berita'] = $this->db->query("SELECT * FROM `tb_berita` JOIN tb_kategori JOIN user ON tb_berita.id_kategori=tb_kategori.id_kategori AND tb_berita.author=user.id WHERE nama_kategori='$namakategori' GROUP BY tanggal DESC")->result();
-
 		$this->load->view('portal/template/header', $data);
 		$this->load->view('portal/kategori', $data);
 		$this->load->view('portal/template/footer');
-		// print_r($data['berita']);
 	}
 	public function detail()
 	{
@@ -100,7 +99,6 @@ class Dashboard extends CI_Controller
 	public function get()
 	{
 		$data = $this->db->get('tb_kategori')->result();
-		// print_r($data);
 		echo json_encode($data);
 	}
 }

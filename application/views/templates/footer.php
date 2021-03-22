@@ -108,29 +108,6 @@
 
       });
 
-      //   $(document).ready(function() {
-      //       $('.detTag').on('click', function() {
-      //           //   var idtag = $('#detTag').val();
-      //           //   console.log("delete")
-      //           //   $.ajax({
-      //           //       type: "POST",
-      //           //       url: "<?php echo base_url('Berita/detTag') ?>",
-      //           //       dataType: "JSON",
-      //           //       data: {
-      //           //           idtag: idtag
-      //           //       },
-
-      //           //       success: function(data) {
-      //           //           tampil_tag();
-      //           //       }
-      //           //   });
-      //           //   return false;
-      //           //   console.log('asdasdsad')
-
-      //       });
-
-      //   });
-
       $('#show_tag').on('click', '#delTag', function() {
           var idtag = $(this).attr('data');
           //   console.log(idtag)
@@ -168,6 +145,71 @@
                       html += "<a href='javascript:;' id='delTag' class='detTag badge badge-danger' data='" + data[i].id_tag + "' value='" + data[i].id_tag + "'>" + data[i].tag + "</a>";
                   }
                   $('#show_tag').html(html);
+              }
+          });
+      }
+  </script>
+
+  <script type="text/javascript">
+      tampil_kategori();
+      $(document).ready(function() {
+          $('#addkategori').on('click', function() {
+              var idberita = $('#id_berita').val();
+              var idkategori = $('#idkategori').val();
+              $.ajax({
+                  type: "POST",
+                  url: "<?php echo base_url('Berita/addDetKategori') ?>",
+                  dataType: "JSON",
+                  data: {
+                      idberita: idberita,
+                      idkategori: idkategori
+                  },
+
+                  success: function(data) {
+                      tampil_kategori();
+                  }
+              });
+              return false;
+          });
+      });
+
+      $('#show_kategori').on('click', '#delTag', function() {
+          var idtag = $(this).attr('data');
+          $.ajax({
+              type: "POST",
+              url: "<?php echo base_url('Berita/delDetKategori') ?>",
+              dataType: "JSON",
+              data: {
+                  iddetkategori: iddetkategori
+              },
+              success: function(data) {
+                  tampil_kategori();
+              }
+          });
+          return false;
+      });
+
+      function tampil_kategori() {
+          var idberita = $('#id_berita').val();
+          //   console.log(idberita)
+          $.ajax({
+              url: "<?php echo site_url('Berita/showDetKategori'); ?>",
+              method: "POST",
+              data: {
+                  idberita: idberita
+              },
+              async: true,
+              dataType: 'json',
+              success: function(data) {
+                  console.log(data);
+                  var html = '';
+                  var i;
+                  for (i = 0; i < data.length; i++) {
+
+                      console.log(data[i].id_detkategori);
+                      html += "<a href='javascript:;' id='detKategori' class='detTag badge badge-danger' data='" + data[i].id_detkategori + "' value='" + data[i].id_detkategori + "'>" + data[i].nama_kategori + "</a>";
+                  }
+                  $('#show_kategori').html(html);
               }
           });
       }

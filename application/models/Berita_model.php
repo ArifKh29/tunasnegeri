@@ -14,6 +14,16 @@ class Berita_model extends CI_Model
         return $hasil->idberita;
     }
 
+    function adddetkategori($idberita, $idkategori)
+    {
+        $query = $this->db->query("INSERT INTO `tb_detkategori`(`id_kategori`, `id_berita`) VALUES ('$idkategori','$idberita')");
+        return $query;
+    }
+    function showdetkategori($idberita)
+    {
+        $query = $this->db->query("SELECT * FROM tb_detkategori JOIN tb_kategori ON tb_detkategori.id_kategori=tb_kategori.id_kategori WHERE tb_detkategori.id_berita='$idberita'");
+        return $query->result();
+    }
     function addtag($idberita, $tag)
     {
         $query = $this->db->query("INSERT INTO `tb_tagberita`(`tag`, `id_berita`) VALUES ('$tag','$idberita')");

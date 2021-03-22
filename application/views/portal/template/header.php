@@ -62,3 +62,12 @@
             </div>
         </div>
     </div>
+
+    <!-- Side Ads Sticky -->
+    <div class="side-ads-sticky left-ads">
+        <img class="sideleft-img-ads" src="<?= base_url('assets/img/ads/left-ads.png') ?> " alt="">
+    </div>
+    <div class="side-ads-sticky right-ads">
+        <img class="sideright-img-ads" src="<?= base_url('assets/img/ads/left-ads.png') ?> " alt="">
+    </div>
+    <!-- Side Ads Sticky -->

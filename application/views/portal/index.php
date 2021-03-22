@@ -1,9 +1,13 @@
 <div class="top-page">
+
     <div class="container">
+        <div class="top-ads pt-2">
+            <img class="top" src="<?= base_url('assets/img/ads/top-ads.png') ?> " alt="">
+        </div>
         <div class="row">
 
             <!-- Left Slider -->
-            <div class="col-lg-8 pt-5">
+            <div class="col-lg-8 pt-3">
                 <div id="demo" class="carousel slide" data-ride="carousel">
                     <ul class="carousel-indicators ">
                         <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -43,7 +47,7 @@
             </div>
             <!-- End Left Slider -->
             <!-- Popular Post -->
-            <div class="col-lg-4 pt-5">
+            <div class="col-lg-4 pt-3">
                 <div class="block-title-6">
                     <h4 class="h5 border-primary">
                         <span class="bg-primary text-white">
@@ -508,11 +512,9 @@
 
 <div class="latest-post">
     <div class="container">
-
         <div class="row">
-
             <div class="col-lg-8 col-md-12 col-12">
-                <!-- Pemerintahan -->
+                <!-- Latest Post -->
                 <div class="block-title-6">
                     <h4 class="h5 border-primary">
                         <span class="bg-primary text-white font-navbar">
@@ -525,23 +527,21 @@
                 </div>
                 <div class="border-bottom-last-0 first-pt-0">
                     <div class="card card-full hover-a py-4 post-1284 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion tag-kids-fashion tag-wear">
-                        <?php $i = 0;
+                        <?php
                         foreach ($berita as $latest) {
-
-                            if (++$i > 5) break;
                         ?>
                             <div class="row pb-4">
-                                <div class="col-md-12 col-lg-12 col-12 ">
+                                <div class="col-md-6 col-lg-6 col-12 ">
                                     <div class="ratio_360-202 image-wrapper">
-                                        <a href="<?= base_url('detail/') . $latest->id_berita ?>/">
+                                        <a href="<?= base_url('Dashboard/detail/') . $latest->id_berita ?>/">
                                             <img width="360" height="202" src="<?= base_url('assets/img/berita/') . $latest->foto ?>" sizes="(max-width: 360px) 100vw, 360px" data-was-processed="true">
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-md-12 col-lg-12 col-12 ">
+                                <div class="col-md-6 col-lg-6 col-12 ">
                                     <div class="card-body pt-3 pt-sm-0 pt-md-3 pt-lg-0">
                                         <h3 class="card-title h3-sm h1-md h3-lg font-title">
-                                            <a href="<?= base_url('detail/') . $latest->id_berita ?>"><?= substr($latest->judul_berita, 0, 100)  ?></a>
+                                            <a href="<?= base_url('Dashboard/detail/') . $latest->id_berita ?>"><?= substr($latest->judul_berita, 0, 100)  ?></a>
                                         </h3>
                                         <div class="card-text mb-2 text-muted small">
                                             <span class="fw-bold d-none d-sm-inline me-1">

@@ -6,7 +6,6 @@
     <div class="row">
         <div class="col-lg-12">
             <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
-
             <?= $this->session->flashdata('message'); ?>
             <?= form_open_multipart('berita/simpan'); ?>
             <label for="tanggal">Tanggal</label>
@@ -26,23 +25,56 @@
             </div>
 
             <label for="isi">Isi</label>
+            <div class="col-md-2 pb-2">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addMedia">
+                    Add Media
+                </button>
+            </div>
             <div class="form-group">
                 <textarea id="ckeditor" name="isi" height="200" required></textarea>
             </div>
 
             <label for="kategori">Kategori</label>
             <div class="form-group">
-                <select name="kategori" class="form-control">
-                    <?php
-                    foreach ($kategori as $k) { ?>
-                        <option type="checkbox" class="form-control" value="<?= $k->id_kategori ?>"><?= $k->nama_kategori ?> </option>
-                    <?php
-                    }
-                    ?>
-                </select>
+                <div class="row">
+                    <div class="col-md-5">
+                        <select name="kategori" id='idkategori' class="form-control">
+                            <?php
+                            foreach ($kategori as $k) { ?>
+                                <option class="form-control" value="<?= $k->id_kategori ?>"><?= $k->nama_kategori ?> </option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <div id="addkategori" class="btn btn-primary">Add</div>
+                    </div>
+                    <div class="col-md-5">
+                        <input class="form-control" id="tag" name="tag" />
+
+                    </div>
+                    <div class="col-md-1">
+                        <div id="add" class="btn btn-primary">Add</div>
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-md-6">
+                        <div class="tags">
+                            <span>Daftar Kategori : </span>
+                            <div id='show_kategori'></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tags">
+                            <span>Daftar Tag : </span>
+                            <div id='show_tag'></div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <label for="kategori">Sub Kategori</label>
+            <!-- <label for="kategori">Sub Kategori</label>
             <div class="form-group">
                 <select name="subkategori" class="form-control">
                     <?php
@@ -66,7 +98,7 @@
                     <span>Daftar Tag : </span>
                     <div id='show_tag'></div>
                 </div>
-            </div>
+            </div> -->
             <div class="form-group">
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="image" name="image" required>
@@ -87,26 +119,23 @@
 <!-- Modal -->
 
 <!-- Modal -->
-<div class="modal fade" id="newMenuModal" tabindex="-1" role="dialog" aria-labelledby="newMenuModalLabel" aria-hidden="true">
+<!-- Modal -->
+<div class="modal fade" id="addMedia" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="newMenuModalLabel">Add New Menu</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('menu'); ?>" method="POST">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="menu" name="menu" placeholder="Menu name">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Add</button>
-                </div>
-            </form>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
         </div>
     </div>
 </div>

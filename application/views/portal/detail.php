@@ -23,6 +23,11 @@
                     </figure>
                     <?= $detail['isi'] ?>
                 </div>
+                <footer class="entry-footer">
+                    <div class="tags-links mb-3"><span class="fw-bold me-2">Category</span> <a href="https://demo.bootstrap.news/default/category/lifestyle/fashion/" rel="category tag">Fashion</a></div>
+                    <div class="tags-links tagcloud"><span class="fw-bold me-2">Tags</span> <a href="https://demo.bootstrap.news/default/tag/adventure/" rel="tag">adventure</a><a href="https://demo.bootstrap.news/default/tag/style/" rel="tag">style</a></div>
+                </footer>
+                <hr>
                 <div id="comments" class="mb-5">
                     <div id="respond" class="comment-respond">
                         <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/default/2019/06/what-top-davis-trade-contenders-can-actually-offer/#respond" style="display:none;">Cancel reply</a></small></h3>
